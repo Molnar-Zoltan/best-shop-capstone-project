@@ -20,16 +20,16 @@ const routes = [
 ];
 
 const socials = [
-    { href: 'https://facebook.com',     title: 'Facebook',      src: `.${imgLocationSVG}socials-facebook.svg` },
-    { href: 'https://x.com',            title: 'Twitter',       src: `.${imgLocationSVG}socials-twitter.svg` },
-    { href: 'https://instagram.com',    title: 'Instagram',     src: `.${imgLocationSVG}socials-instagram.svg` },
+    { href: 'https://facebook.com',     title: 'Facebook',      src: `${imgLocationSVG}socials-facebook.svg` },
+    { href: 'https://x.com',            title: 'Twitter',       src: `${imgLocationSVG}socials-twitter.svg` },
+    { href: 'https://instagram.com',    title: 'Instagram',     src: `${imgLocationSVG}socials-instagram.svg` },
 ];
 
 const benefitsItems = [
-    { img: `.${imgLocationSVG}benefits-item1.svg`,  text: 'Velit nisl sodales eget donec quis. volutpat orci.' },
-    { img: `.${imgLocationSVG}benefits-item2.svg`,  text: 'Dolor eu varius. Morbi fermentum velit nisl.' },
-    { img: `.${imgLocationSVG}benefits-item3.svg`,  text: 'Malesuada fames ac ante ipsum primis in faucibus.' },
-    { img: `.${imgLocationSVG}benefits-item4.svg`,  text: 'Nisl sodales eget donec quis. volutpat orci.' },
+    { img: `${imgLocationSVG}benefits-item1.svg`,  text: 'Velit nisl sodales eget donec quis. volutpat orci.' },
+    { img: `${imgLocationSVG}benefits-item2.svg`,  text: 'Dolor eu varius. Morbi fermentum velit nisl.' },
+    { img: `${imgLocationSVG}benefits-item3.svg`,  text: 'Malesuada fames ac ante ipsum primis in faucibus.' },
+    { img: `${imgLocationSVG}benefits-item4.svg`,  text: 'Nisl sodales eget donec quis. volutpat orci.' },
 ];
 
 const nav = document.querySelector("nav");
@@ -97,7 +97,7 @@ const menuItems = document.querySelectorAll("nav a");
 const catalog = document.querySelector('a[href="#catalog"]');
 catalog && catalog.classList.add('catalog-menu-item');
 const arrowIcon = document.createElement("img");
-arrowIcon.setAttribute('src', `.${imgLocationSVG}catalog-arrow.svg`);
+arrowIcon.setAttribute('src', `${imgLocationSVG}catalog-arrow.svg`);
 arrowIcon.setAttribute('alt', 'Arrow icon');
 catalog && catalog.append(arrowIcon);
 

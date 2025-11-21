@@ -156,7 +156,7 @@ header .header-content .user-icons .cart-circle {
   }
 }
 header .header-content .user-icons .cart-circle {
-  background: url("../assets/images/svg/cart-circle.svg") center/cover no-repeat;
+  background: url("../src/assets/images/svg/cart-circle.svg") center/cover no-repeat;
   justify-content: center;
   align-items: center;
 }
@@ -260,7 +260,7 @@ footer .benefits {
   align-items: center;
   gap: 2rem;
   min-height: 192px;
-  background: #504E4A url("../assets/images/svg/footer-benefits-lines.svg") center/cover no-repeat;
+  background: #504E4A url("../src/assets/images/svg/footer-benefits-lines.svg") center/cover no-repeat;
   color: #FFF;
   padding: 20px 0;
 }
@@ -643,7 +643,7 @@ a:hover, a:active {
 }
 .offers {
   color: #FFF;
-  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../assets/images/png/about-offers.png") center/cover no-repeat;
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../src/assets/images/png/about-offers.png") center/cover no-repeat;
 }
 .offers .offers-discount-container {
   display: flex;
@@ -925,7 +925,7 @@ button:hover {
   text-align: center;
   gap: 2rem;
   color: #FFF;
-  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../assets/images/png/home-hero-image.png") center/cover no-repeat;
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../src/assets/images/png/home-hero-image.png") center/cover no-repeat;
 }
 @media (min-width: 768px) {
   .content-home .hero-home .hero-home-discount-container {
@@ -1091,7 +1091,7 @@ button:hover {
   width: 100%;
   height: 555px;
   gap: 2rem;
-  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../assets/images/png/about-header.png") center/cover no-repeat;
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../src/assets/images/png/about-header.png") center/cover no-repeat;
 }
 .content-about .header-about .header-about-description {
   display: flex;
@@ -1225,7 +1225,7 @@ button:hover {
   width: 100%;
   height: 555px;
   gap: 2rem;
-  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../assets/images/png/contact-header.png") center/cover no-repeat;
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../src/assets/images/png/contact-header.png") center/cover no-repeat;
 }
 .content-contact .header-contact .header-contact-description {
   display: flex;
@@ -1827,7 +1827,7 @@ button:hover {
 }
 .content-product .product-details-container .product-reviews .add-review-container .add-review-form-container .rate-product-container .rate-product-stars img:hover {
   cursor: pointer;
-  background-image: url("../assets/images/svg/star-full.svg");
+  background-image: url("../src/assets/images/svg/star-full.svg");
 }
 .content-product .product-details-container .product-reviews .add-review-container .add-review-form-container .add-review-form {
   display: flex;
@@ -1976,12 +1976,13 @@ button:hover {
   align-items: center;
   width: inherit;
   height: 220px;
-  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../assets/images/png/cart-header.png") center/cover no-repeat;
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../src/assets/images/png/cart-header.png") center/cover no-repeat;
 }
 .content-cart .cart-products {
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  -webkit-user-select: none;
   user-select: none;
 }
 .content-cart .cart-products .products-header {

@@ -1,6 +1,6 @@
-export const htmlLocation = './html/';
-export const imgLocationPNG = '/assets/images/png/';
-export const imgLocationSVG = '/assets/images/svg/';
+export const htmlLocation = 'src/html/';
+export const imgLocationPNG = 'src/assets/images/png/';
+export const imgLocationSVG = 'src/assets/images/svg/';
 export const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 export const maxUserInputLength = 32;
 export const maxEmailLength = 254;
@@ -76,7 +76,7 @@ export const cart = {
 
 export const fetchData = async () => {
     try {
-        const response = await fetch('../assets/data.json');
+        const response = await fetch('src/assets/data.json');
 
         if (!response.ok) {
             throw new Error('Failed to fetch data.');
@@ -124,7 +124,7 @@ export const createProductCards = (products, className) => {
                 const productImageContainer = div.querySelector('.product-image-container');
                 
                 productImageContainer.style.backgroundImage = 
-                    `url('..${imgLocationPNG}products/${product.imageUrl}')`;
+                    `url('${imgLocationPNG}products/${product.imageUrl}')`;
 
                 return div.outerHTML;
             }).join('');
@@ -149,14 +149,14 @@ export const generateStars = (rating) => {
 
     for (let i = 0; i < starsFull; i++) {
         const starImage = document.createElement('img');
-        starImage.setAttribute('src', `..${imgLocationSVG}star-full.svg`);
+        starImage.setAttribute('src', `${imgLocationSVG}star-full.svg`);
         starImage.setAttribute('alt', 'Full Star');
         starsArray.push(starImage);
     }
     
     for (let i = 0; i < starsEmpty; i++) {
         const starImage = document.createElement('img');
-        starImage.setAttribute('src', `..${imgLocationSVG}star-empty.svg`);
+        starImage.setAttribute('src', `${imgLocationSVG}star-empty.svg`);
         starImage.setAttribute('alt', 'Empty Star');
         starsArray.push(starImage);
     }

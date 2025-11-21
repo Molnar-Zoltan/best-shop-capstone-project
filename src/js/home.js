@@ -8,22 +8,22 @@ const travelSuitcases = [
     {
         name: 'Duis vestibulum elit vel neque.',
         description: 'Duis vestibulum vel neque pharetra vulputate. Quisque scelerisque nisi.',
-        image: `..${imgLocationPNG}/products/travel-suitcase-1.png`
+        image: `${imgLocationPNG}/products/travel-suitcase-1.png`
     },
     {
         name: 'Neque vestibulum elit nequvel.',
         description: 'Duis vestibulum vel neque pharetra vulputate. Quisque scelerisque nisi.',
-        image: `..${imgLocationPNG}/products/travel-suitcase-2.png`
+        image: `${imgLocationPNG}/products/travel-suitcase-2.png`
     },
     {
         name: 'Elituis stibulum elit velneque.',
         description: 'Duis vestibulum vel neque pharetra vulputate. Quisque scelerisque nisi.',
-        image: `..${imgLocationPNG}/products/travel-suitcase-3.png`
+        image: `${imgLocationPNG}/products/travel-suitcase-3.png`
     },
     {
         name: 'Vel vestibulum elit tuvel euqen.',
         description: 'Duis vestibulum vel neque pharetra vulputate. Quisque scelerisque nisi.',
-        image: `..${imgLocationPNG}/products/travel-suitcase-4.png`
+        image: `${imgLocationPNG}/products/travel-suitcase-4.png`
     }
 ];
 
@@ -31,17 +31,17 @@ const customers = [
     { 
         name: 'Ethan Wade',
         location: 'New York',
-        image: `..${imgLocationPNG}customer-ethan-wade.png`
+        image: `${imgLocationPNG}customer-ethan-wade.png`
     },
     { 
         name: 'Jane Reyes',
         location: 'California',
-        image: `..${imgLocationPNG}customer-jane-reyes.png`
+        image: `${imgLocationPNG}customer-jane-reyes.png`
     },
     { 
         name: 'Erica Banks',
         location: 'Miami',
-        image: `..${imgLocationPNG}customer-erica-banks.png`
+        image: `${imgLocationPNG}customer-erica-banks.png`
     }
 ];
 

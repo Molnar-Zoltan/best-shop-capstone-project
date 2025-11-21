@@ -4,22 +4,22 @@ const aboutItems = [
     { 
         name: 'Superior Accuracy', 
         description: 'Qewist vestibulum elit vel neque pharetra vulputate scelerisque nisi urna.',
-        image: `..${imgLocationSVG}about-page-accuracy.svg`
+        image: `${imgLocationSVG}about-page-accuracy.svg`
     },
     { 
         name: 'Awards', 
         description: 'Vestibulum elit vel neque pharetra vulputate. Quisque scelerisque nisi urna.',
-        image: `..${imgLocationSVG}about-page-awards.svg`
+        image: `${imgLocationSVG}about-page-awards.svg`
     },
     { 
         name: 'Ecological', 
         description: 'Elit vel neque duis vestibulum pharetra vulputateuisque scelerisque nisi urna.',
-        image: `..${imgLocationSVG}about-page-ecological.svg`
+        image: `${imgLocationSVG}about-page-ecological.svg`
     },
     { 
         name: 'Shipping Worldwide', 
         description: 'Quisque scelerisque nisi urna. Duis vestibulum elit vel neque pharetra vulputate.',
-        image: `..${imgLocationSVG}about-page-worldwide.svg`
+        image: `${imgLocationSVG}about-page-worldwide.svg`
     },
 ];
 
@@ -27,17 +27,17 @@ const teamMembers = [
     { 
         name: 'NATALIA FOSTER', 
         description: 'Product Manager',
-        image: `..${imgLocationPNG}about-natalia-foster.png`
+        image: `${imgLocationPNG}about-natalia-foster.png`
     },
     { 
         name: 'ALEXANDRA THOMPSON', 
         description: 'Graphic Designer',
-        image: `..${imgLocationPNG}about-alexandra-thompson.png`
+        image: `${imgLocationPNG}about-alexandra-thompson.png`
     },
     { 
         name: 'IRYNA BROOKS', 
         description: 'Head of Marketing',
-        image: `..${imgLocationPNG}about-iryna-brooks.png`
+        image: `${imgLocationPNG}about-iryna-brooks.png`
     }
 ];
 

@@ -51,7 +51,7 @@ const generateReviewStars = (rating) => {
 
     for (let i = 0; i < rating; i++) {
         const starImage = document.createElement('img');
-        starImage.setAttribute('src', `..${imgLocationSVG}star-full.svg`);
+        starImage.setAttribute('src', `${imgLocationSVG}star-full.svg`);
         starImage.setAttribute('alt', 'Review Star Full');
         starImage.classList.add(`rate-product-star-${starsArray.length + 1}`);
         starsArray.push(starImage);
@@ -59,7 +59,7 @@ const generateReviewStars = (rating) => {
 
     for (let i = 0; i < starsEmpty; i++) {
         const starImage = document.createElement('img');
-        starImage.setAttribute('src', `..${imgLocationSVG}star-review.svg`);
+        starImage.setAttribute('src', `${imgLocationSVG}star-review.svg`);
         starImage.setAttribute('alt', 'Review Star Empty');
         starImage.classList.add(`rate-product-star-${starsArray.length + 1}`);
         starsArray.push(starImage);
@@ -73,13 +73,13 @@ const modifyReviewStars = (rating, starsImageArray) => {
     let count = 0;
 
     for (let i = 0; i < rating; i++) {
-        starsImageArray[count].setAttribute('src', `..${imgLocationSVG}star-full.svg`);
+        starsImageArray[count].setAttribute('src', `${imgLocationSVG}star-full.svg`);
         starsImageArray[count].setAttribute('alt', 'Review Star Full');
         count++;
     }
 
     for (let i = 0; i < starsEmpty; i++) {
-        starsImageArray[count].setAttribute('src', `..${imgLocationSVG}star-review.svg`);
+        starsImageArray[count].setAttribute('src', `${imgLocationSVG}star-review.svg`);
         starsImageArray[count].setAttribute('alt', 'Review Star Full');
         count++;
     }
@@ -161,7 +161,7 @@ export async function render(htmlPromise) {
         return;
     }
 
-    productImageMain.setAttribute('src', `..${imgLocationPNG}products/${product.imageUrl}`);
+    productImageMain.setAttribute('src', `${imgLocationPNG}products/${product.imageUrl}`);
     productImageMain.setAttribute('alt', product.name);
     productImageContainer.append(productImageMain);
 

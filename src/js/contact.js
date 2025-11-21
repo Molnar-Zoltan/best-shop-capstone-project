@@ -11,25 +11,25 @@ const contactItems = [
         name: 'Our Location', 
         description1: '1234 NW Bobcat Lane, St.',
         description2: 'Robert, MO 65584-5678',
-        image: `..${imgLocationSVG}contact-page-location.svg`
+        image: `${imgLocationSVG}contact-page-location.svg`
     },
     { 
         name: 'Operating Time', 
         description1: 'Weekends: 10:30 AM - 6 PM',
         description2: 'Monday - Friday: 9 AM - 6 PM',
-        image: `..${imgLocationSVG}contact-page-time.svg`
+        image: `${imgLocationSVG}contact-page-time.svg`
     },
     { 
         name: 'Our Email', 
         description1: 'info@bestshop.com',
         description2: 'best@shop.com',
-        image: `..${imgLocationSVG}contact-page-email.svg`
+        image: `${imgLocationSVG}contact-page-email.svg`
     },
     { 
         name: 'Call Us', 
         description1: '(760)265-2917',
         description2: '(268)142-8413',
-        image: `..${imgLocationSVG}contact-page-phone.svg`
+        image: `${imgLocationSVG}contact-page-phone.svg`
     },
 ];
 
