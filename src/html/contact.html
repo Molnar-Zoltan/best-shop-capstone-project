@@ -1,0 +1,48 @@
+<div class="content-contact">
+    <section class="header-contact">
+        <h1 class="page-header-title">Contact Us</h1>
+        <div class="header-contact-description">
+            <p class="page-header-description">Duis vestibulum elit vel neque pharetra vulputate.</p>
+            <p class="page-header-description">Duis rutrum non risus in imperdiet.</p>
+        </div>
+    </section>
+    <section class="contact-information">
+
+    </section>
+    <section class="contact-main">
+        <img src="../assets/images/png/contact-feedback.png" alt="Contact Feedback">
+        <div class="feedback-container">
+            <div class="feedback-description">
+                <h4 class="feedback-description-title">Your Feedback Is Much Appreciated!</h4>
+                <p class="feedback-description-text">We will contact you when you complete the following form!</p>
+            </div>
+            <form class="contact-form">
+                <div class="contact-field">
+                    <label for="contact-name">Your Name <span class="label-required">*</span></label>
+                    <input type="text" id="contact-name" required>
+                    <p class="error-contact-name-empty contact-error-message">Name can't be empty.</p>
+                    <p class="error-contact-name-long contact-error-message">Name is too long.</p>
+                </div>
+                <div class="contact-field">
+                    <label for="contact-email">Your Email Address <span class="label-required">*</span></label>
+                    <input type="email" id="contact-email" required>
+                    <p class="error-contact-email-invalid contact-error-message">Invalid email.</p>
+                </div>
+                <div class="contact-field">
+                    <label for="contact-topic">Topic <span class="label-required">*</span></label>
+                    <input type="text" id="contact-topic" required>
+                    <p class="error-contact-topic-empty contact-error-message">Topic can't be empty.</p>
+                    <p class="error-contact-topic-long contact-error-message">Topic is too long.</p>
+                </div>
+                <div class="contact-field">
+                    <label for="contact-message">Your Message <span class="label-required">*</span></label>
+                    <textarea id="contact-message" required></textarea>
+                    <p class="error-contact-message-empty contact-error-message">Message can't be empty.</p>
+                    <p class="error-contact-message-long contact-error-message">Message is too long.</p>
+                </div>
+                <p class="contact-success-message">Thank you for reaching out! We'll get back to you shortly.</p>
+                <button type="submit">SEND</button>
+            </form>
+        </div>
+    </section>
+</div>

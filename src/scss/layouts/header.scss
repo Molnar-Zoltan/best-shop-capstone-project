@@ -1,0 +1,213 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+@use "sass:map";
+
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    z-index: map.get($header, z-index);
+    top: map.get($header, sticky-top);
+    margin-top: map.get($header, margin-top);
+    margin-bottom: map.get($header, margin-bottom);
+    border-radius: map.get($header, border-radius);
+    padding: map.get($header, padding);
+
+    @media (min-width: $breakpoint-sm) {
+        min-height: map.get($header, height);
+    }
+
+    width: clamp(0px, $mobile-width, map.get($header, width)); 
+    background-color: $color-background;
+    font-weight: $font-weight-bold;
+
+    .header-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: clamp(0px, $mobile-width, map.get($header, width)); 
+
+        .socials {
+            display: flex;
+
+            @include setup-socials(map.get($socials, size-mobile), map.get($socials, gap-mobile));
+
+            @media (min-width: $breakpoint-sm) {
+                @include setup-socials(map.get($socials, size), map.get($socials, gap));
+            }
+
+            @include interactive-image-button;
+        }
+
+        .title-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: map.get($header-title-container, height);
+
+            @include setup-title(
+                map.get($logo-container, size-mobile), 
+                map.get($logo, size-mobile), 
+                map.get($header-title-container, gap-mobile), 
+                $font-16
+            );
+
+            @media (min-width: $breakpoint-sm) {
+                @include setup-title(
+                    map.get($logo-container, size), 
+                    map.get($logo, size), 
+                    map.get($header-title-container, gap), 
+                    $font-30
+                );
+            }
+
+            .logo-container {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-radius: map.get($logo-container, border-radius);
+                background-color: $color-accent;
+
+                img {
+                    filter: drop-shadow(#{map.get($logo, shadow)});
+                }
+            }
+
+
+            .title {
+                text-decoration: none;
+                color: $color-accent;
+
+                @include transition-color('opacity');
+
+                &:hover,
+                &:active {
+                    opacity: $header-title-opacity-hover;
+                }
+            }
+        }
+
+        .user-icons {
+            display: flex;
+
+            @include setup-user-icons(map.get($user-icons, size-mobile), map.get($user-icons, gap-mobile));
+
+            @media (min-width: $breakpoint-sm) {
+                @include setup-user-icons(map.get($user-icons, size), map.get($user-icons, gap));
+            }
+
+            @include interactive-image-button;
+
+            .cart-circle {
+                display: none;
+                position: absolute;
+                height: map.get($cart-circle, size-mobile);
+                width: map.get($cart-circle, size-mobile);
+                margin-top: map.get($cart-circle, margin-top-mobile);
+                margin-left: map.get($cart-circle, margin-left-mobile);
+
+                @media (min-width: $breakpoint-sm) {
+                    height: map.get($cart-circle, size);
+                    width: map.get($cart-circle, size);
+                    margin-top: map.get($cart-circle, margin-top);
+                    margin-left: map.get($cart-circle, margin-left);
+                }
+
+                background: url('#{$img-location-svg}cart-circle.svg') center/cover no-repeat;
+                justify-content: center;
+                align-items: center;
+
+                .cart-count {
+                    color: $color-accent;
+                    font-size: $font-10;
+
+                    @media (min-width: $breakpoint-sm) {
+                        font-size: $font-12;
+                    }
+                }
+            }
+        }
+    }
+
+    hr {
+        display: none;
+
+        @media (min-width: $breakpoint-sm) {
+            display: block;
+            width: clamp(0px, $mobile-width, map.get($hr, width)); 
+            color: map.get($hr, line-color);
+            opacity: map.get($hr, line-opacity);
+        }
+    }
+
+    nav {
+        display: flex;
+        flex-direction: column;
+        width: clamp(0px, $mobile-width, map.get($header, width)); 
+        gap: map.get($nav, gap-mobile);
+
+        @media (min-width: $breakpoint-sm) {
+            flex-direction: row;
+            justify-content: center;
+            gap: map.get($nav, gap);
+        }
+
+        a {
+            font-size: $font-18;
+        }
+    }
+
+    .hamburger-button-container {
+        display: block;
+        width: $mobile-width; 
+        margin-top: map.get($hamburger-button-container, margin-top);
+
+
+        @media (min-width: $breakpoint-sm) {
+            display: none;
+        }
+
+        svg {
+            width: map.get($hamburger-button-container, button-size);
+            fill: $color-text;
+
+            @include transition-color('fill');
+
+            &:hover, 
+            &:active {
+                fill: $color-accent;
+                cursor: pointer;
+            }
+        }
+
+        .hamburger-button-close {
+            margin-bottom: map.get($hamburger-button-container, margin-bottom);
+        }
+    }
+}
+
+
+.hidden-mobile {
+    display: none;
+
+    @media (min-width: $breakpoint-sm) {
+        display: flex;
+    }
+}
+
+.catalog-menu-item {
+    display: flex;
+    align-items: center;
+    gap: map.get($catalog-menu-item, gap);
+
+    img {
+        height: map.get($catalog-menu-item, arrow-size);
+        width: map.get($catalog-menu-item, arrow-size);
+    }
+}
+
+.menu-item-active {
+    color: $color-accent;
+}

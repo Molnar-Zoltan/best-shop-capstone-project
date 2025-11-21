@@ -1,0 +1,361 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+@use '../base/fonts' as *;
+@use 'sass:map';
+
+.content-cart {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: $content-cart-width;
+
+    .header-cart {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: inherit;
+        height: $header-cart-height;
+
+        @include background-with-overlay('#{$img-location-png}cart-header.png');
+    }
+
+    .cart-products {
+        display: flex;
+        flex-direction: column;
+        gap: $cart-products-gap;
+        -webkit-user-select: none;
+        user-select: none;
+
+        .products-header {
+            display: flex;
+            align-items: center;
+            gap: map.get($cart-products-header, gap-mobile);
+
+            @include set-font-family($font-family-sf-pro);
+
+            font-size: $font-10;
+            font-weight: $font-weight-bold;
+            color: $color-background;
+            background-color: $color-benefits-background;
+            height: map.get($cart-products-header, height);
+            padding-right: map.get($cart-products-header, padding-right-mobile);
+
+            @media (min-width: $breakpoint-sm) {
+                gap: map.get($cart-products-header, gap-sm);
+                font-size: $font-12;
+                padding-right: map.get($cart-products-header, padding-right-sm);
+            }
+
+            @media (min-width: $breakpoint-md) {
+                gap: map.get($cart-products-header, gap-md);
+                font-size: $font-18;
+            }
+
+            @media (min-width: $breakpoint-lg) {
+                gap: map.get($cart-products-header, gap-lg);
+            }
+
+            .header-image {
+                margin-left: map.get($cart-header-image, margin-left-mobile);
+
+                @media (min-width: $breakpoint-sm) {
+                    margin-left: map.get($cart-header-image, margin-left-sm);
+                }
+            }
+
+            .header-name {
+                margin-left: map.get($cart-header-name, margin-left-mobile);
+                max-width: map.get($cart-header-name, max-width-mobile);
+                text-align: center;
+
+                @media (min-width: $breakpoint-sm) {
+                    max-width: map.get($cart-header-name, max-width-sm);
+                    margin-left: map.get($cart-header-name, margin-left-sm);
+                }
+
+                @media (min-width: $breakpoint-md) {
+                    margin-left: map.get($cart-header-name, margin-left-md);
+                }
+            }
+
+            .header-price {
+                margin-left: $cart-header-price-margin-left;
+            }
+
+            .header-quantity {
+                margin-left: map.get($cart-header-quantity, margin-left-mobile);
+
+                @media (min-width: $breakpoint-sm) {
+                    margin-left: map.get($cart-header-total, margin-left-sm);
+                }
+            }
+
+            .header-total {
+                margin-left: map.get($cart-header-total, margin-left-mobile);
+
+                @media (min-width: $breakpoint-sm) {
+                    margin-left: map.get($cart-header-total, margin-left-sm);
+                }
+
+                @media (min-width: $breakpoint-md) {
+                    margin-left: map.get($cart-header-total, margin-left-md);
+                }
+            }
+
+            .header-delete {
+                margin-left: map.get($cart-header-delete, margin-left-mobile);
+
+                @media (min-width: $breakpoint-sm) {
+                    margin-left: map.get($cart-header-delete, margin-left-sm);
+                }
+
+                @media (min-width: $breakpoint-md) {
+                    margin-left: map.get($cart-header-delete, margin-left-md);
+                }
+
+                @media (min-width: $breakpoint-lg) {
+                    margin-left: map.get($cart-header-delete, margin-left-lg);
+                }
+            }
+        }
+
+        .products-container {
+            display: flex;
+            flex-direction: column;
+            gap: $cart-products-container-gap;
+
+            .checkout-product {
+                display: flex;
+                align-items: center;
+                gap: map.get($checkout-product, gap-mobile);
+                padding-bottom: map.get($checkout-product, padding-bottom);
+                border-bottom: map.get($checkout-product, border-bottom);
+                font-size: $font-10;
+                font-weight: $font-weight-bold;
+
+                @media (min-width: $breakpoint-sm) {
+                    gap: map.get($checkout-product, gap-sm);
+                    font-size: $font-14;
+                }
+
+                @media (min-width: $breakpoint-md) {
+                    gap: map.get($checkout-product, gap-md);
+                    font-size: $font-18;
+                }
+
+                @media (min-width: $breakpoint-lg) {
+                    gap: map.get($checkout-product, gap-lg);
+                }
+
+                .product-image {
+                    height: map.get($cart-product-image, size-mobile);
+                    width: map.get($cart-product-image, size-mobile);
+                    overflow: hidden;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    img {
+                        height: map.get($cart-product-image, img-height);
+                        object-fit: cover;
+                    }
+
+                    @media (min-width: $breakpoint-md) {
+                        height: map.get($cart-product-image, size-md);
+                        width: map.get($cart-product-image, size-md);
+                    }
+                }
+
+                .product-name {
+                    max-width: map.get($cart-product-name, max-width-mobile);
+                    text-align: center;
+
+                    @include set-font-family($font-family-sf-pro);
+
+                    @media (min-width: $breakpoint-sm) {
+                        max-width: map.get($cart-product-name, max-width-sm);
+                    }
+
+                    @media (min-width: $breakpoint-md) {
+                        max-width: map.get($cart-product-name, max-width-md);
+                    }
+                }
+
+                .product-quantity {
+                    display: flex;
+                    align-items: center;
+                    gap: map.get($cart-product-quantity, gap-mobile);
+                    font-size: $font-14;
+                    text-align: center;
+                    margin-left: map.get($cart-product-quantity, margin-left-mobile);
+
+                    @include set-font-family($font-family-sf-pro);
+
+                    @media (min-width: $breakpoint-sm) {
+                        gap: map.get($cart-product-quantity, gap-sm);
+                        margin-left: map.get($cart-product-quantity, margin-left-sm);
+                    }
+
+                    @media (min-width: $breakpoint-sm) {
+                        font-size: $font-18;
+                    }
+
+                    @media (min-width: $breakpoint-md) {
+                        font-size: $font-25;
+                    }
+
+                    .increase-quantity,
+                    .decrease-quantity {
+                        font-size: $font-18;
+
+                        @include transition-color;
+
+                        @media (min-width: $breakpoint-md) {
+                            font-size: $font-34;
+                        }
+
+                        &:hover,
+                        &:active {
+                            cursor: pointer;
+                            color: $color-accent;
+                        }
+                    }
+
+                    .quantity {
+                        width: map.get($cart-product-quantity, quantity-width);
+                    }
+                }
+
+                .product-total {
+                    width: map.get($cart-product-total, width-mobile);
+                    margin-left: map.get($cart-product-total, margin-left-mobile);
+
+                    @media (min-width: $breakpoint-sm) {
+                        width: map.get($cart-product-total, width-sm);
+                        margin-left: map.get($cart-product-total, margin-left-sm);
+                    }
+                }
+
+                .product-delete {
+                    cursor: pointer;
+
+                    @include transition-color('opacity');
+
+                    height: map.get($cart-product-delete, size-mobile);
+                    width: map.get($cart-product-delete, size-mobile);
+                    margin-left: map.get($cart-product-delete, margin-left-mobile);
+
+                    @media (min-width: $breakpoint-sm) {
+                        margin-left: map.get($cart-product-delete, margin-left-sm);
+                        height: map.get($cart-product-delete, size-sm);
+                        width: map.get($cart-product-delete, size-sm);
+                    }
+
+                    @media (min-width: $breakpoint-md) {
+                        margin-left: map.get($cart-product-delete, margin-left-md);
+                    }
+
+                    @media (min-width: $breakpoint-lg) {
+                        margin-left: map.get($cart-product-delete, margin-left-lg);
+                    }
+
+                    &:hover,
+                    &:active {
+                        cursor: pointer;
+                        opacity: map.get($cart-product-delete, hover-opacity);
+                    }
+                }
+            }
+        }
+    }
+
+    .footer-cart {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: map.get($footer-cart, width);
+        padding: map.get($footer-cart, padding);
+        gap: map.get($footer-cart, gap);
+
+        @media (min-width: $breakpoint-md) {
+            flex-direction: row;
+            justify-content: space-evenly;
+        }
+
+        .cart-button-container {
+            display: flex;
+            flex-direction: column;
+            gap: map.get($cart-button-container, gap);
+
+            @media (min-width: $breakpoint-sm) {
+                flex-direction: row;
+            }
+
+            .continue-shopping, 
+            .clear-shopping-cart {
+                @include setup-button(
+                    map.get($cart-button-container, button-height),
+                    map.get($cart-button-container, button-width)
+                );
+
+                font-size: $font-15;
+            }
+        }
+
+        .cart-checkout-container {
+            display: flex;
+            flex-direction: column;
+            width: map.get($cart-checkout-container, width-mobile);
+            background-color: $color-benefits-background;
+            padding: map.get($cart-checkout-container, padding);
+            gap: map.get($cart-checkout-container, gap);
+            margin-bottom: map.get($cart-checkout-container, margin-bottom);
+
+            @media (min-width: $breakpoint-sm) {
+                width: map.get($cart-checkout-container, width-sm);
+            }
+
+            .cart-checkout-text-container {
+                display: flex;
+                flex-direction: column;
+                color: $color-background;
+                font-weight: $font-weight-bold;
+                gap: map.get($cart-checkout-text-container, gap);
+                font-size: $font-17;
+
+                p {
+                    display: flex;
+                    justify-content: space-between;
+                }
+
+                .total-text {
+                    font-size: $font-20;
+                }
+
+                hr {
+                    background-color: $color-accent;
+                    height: map.get($cart-checkout-text-container, hr-height);
+                    border: none;
+                }
+            }
+
+            .checkout-button {
+                @include setup-button(
+                    map.get($checkout-button, height), 
+                    map.get($checkout-button, width)
+                );
+
+                font-size: $font-18;
+                font-weight: $font-weight-bold;
+            }
+
+            .checkout-complete-text {
+                display: none;
+                color: $color-accent;
+                font-size: $font-18;
+                font-weight: $font-weight-bold;
+                text-align: center;
+            }
+        }
+    }
+}

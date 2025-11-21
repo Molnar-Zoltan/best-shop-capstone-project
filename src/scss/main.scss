@@ -1,0 +1,56 @@
+@use './base/reset';
+@use './abstracts/variables' as *;
+@use './abstracts/mixins' as *;
+@use './base/fonts' as *;
+@use './layouts/header';
+@use './layouts/footer';
+@use './layouts/login';
+@use './components/forms';
+@use './components/buttons';
+@use './pages/home';
+@use './pages/about';
+@use './pages/contact';
+@use './pages/product-details';
+@use './pages/cart';
+@use './pages/catalog';
+@use './components/product-card';
+@use 'sass:map';
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: $body-height;
+    background-color: $color-background;
+    color: $color-text;
+
+    @include set-font-family($font-family-primary);
+}
+
+main {
+    width: 100%;
+}
+
+h1 {
+  font-size: $font-size-h1;
+}
+
+h2 {
+  font-size: $font-size-h2;
+}
+
+h3 {
+  font-size: $font-size-h3;
+}
+
+h4 {
+  font-size: $font-size-h4;
+}
+
+h5 {
+  font-size: $font-size-h5;
+}
+
+h6 {
+  font-size: $font-size-h6;
+}

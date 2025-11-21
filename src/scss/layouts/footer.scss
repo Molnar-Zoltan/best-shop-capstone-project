@@ -1,0 +1,214 @@
+
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+@use '../base/fonts' as *;
+@use "sass:map";
+
+footer {
+    width: map.get($footer, width);
+    display: flex;
+    flex-direction: column;
+    gap: map.get($footer, gap);
+    padding-bottom: map.get($footer, padding-bottom);
+    line-height: $line-height-base;
+    font-size: $font-15;
+
+    @include set-font-family($font-family-helvetica);
+
+    .benefits {
+        width: map.get($footer, width);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: map.get($footer-benefits, gap);
+        min-height: map.get($footer-benefits, height);
+        background:
+            $color-benefits-background
+            url('#{$img-location-svg}footer-benefits-lines.svg') center / cover no-repeat;
+        color: $color-background;
+        padding: map.get($footer-benefits, padding-y);
+
+          
+        .benefits-title-container {
+            display: flex;
+            justify-content: center;
+            width: map.get($footer-benefits, width);
+
+            @include set-font-family($font-family-inter);
+
+            @media (min-width: $breakpoint-sm) {
+                justify-content: flex-start;
+            }
+
+            font-weight: $font-weight-bold;
+            font-size: $font-19;
+        }
+
+        .benefits-items-container {
+            display: flex;
+            justify-content: center;
+            width: map.get($footer-benefits, width);
+            flex-wrap: wrap;
+            gap: map.get($benefits-item, gap-container);
+
+            @media (min-width: $breakpoint-sm) {
+                justify-content: space-between;
+            }
+
+            .benefits-item {
+                display: flex;
+                align-items: center;
+                gap: map.get($benefits-item, gap);
+
+                span {
+                    max-width: map.get($benefits-item, span-width-sm);
+                    font-size: $font-14;
+
+                    @media (min-width: $breakpoint-sm) {
+                        max-width: map.get($benefits-item, span-width);
+                        font-size: $font-15;
+                    }
+
+                }
+
+                img {
+                    height: map.get($benefits-item, img-size-sm);
+                    width: map.get($benefits-item, img-size-sm);
+
+                    @media (min-width: $breakpoint-sm) {
+                        height: map.get($benefits-item, img-size);
+                        width: map.get($benefits-item, img-size);
+                    }
+                }
+            }
+        }
+
+    }
+
+    .footer-information {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: map.get($footer-information, gap);
+
+        @media (min-width: $breakpoint-sm) {
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin: map.get($footer-information, margin-sm);
+        }
+        
+
+        .footer-information-general {
+            display: flex;
+            flex-direction: column;
+            gap: map.get($footer-information, gap);
+            max-width: map.get($footer-information, section-width);
+
+            .information-general-links {
+                display: flex;
+                justify-content: space-between;
+                flex-wrap: wrap;
+                gap: map.get($information-general-links, gap);
+
+                .general-links {
+                    display: flex;
+                    flex-direction: column;
+                    gap: $footer-information-title-gap;
+
+                    .links-title {
+                        font-weight: $font-weight-bold;
+                    }
+
+                    .links-items {
+                        display: flex;
+                        flex-direction: column;
+                        gap: map.get($information-general-links, link-items-gap);
+                    }
+                }
+            }
+
+            .information-general-shipping {
+                display: flex;
+                flex-direction: column;
+                gap: $footer-information-title-gap;
+
+                .general-shipping-title {
+                    font-weight: $font-weight-bold;
+                }
+            }
+        }
+
+        .footer-information-contact {
+            display: flex;
+            flex-direction: column;
+            gap: map.get($footer-information, gap);
+            max-width: map.get($footer-information, section-width);
+
+            .information-contact-description {
+                display: flex;
+                flex-direction: column;
+                gap: $footer-information-title-gap;
+
+                .contact-title {
+                    font-weight: $font-weight-bold;
+                }
+            }
+
+            .information-contact-items {
+                display: grid;
+                grid-template-areas: 
+                "item1" 
+                "item2"
+                "item3"
+                "item4";
+                row-gap: map.get($contact-items, row-gap);
+
+                @media (min-width: $breakpoint-lg) {
+                    grid-template-areas: 
+                    "item1 item2"
+                    "item3 item4";
+                    column-gap: map.get($contact-items, column-gap);
+                }
+
+                .contact-item1 { grid-area: item1; }
+                .contact-item2 { grid-area: item2; }
+                .contact-item3 { grid-area: item3; }
+                .contact-item4 { grid-area: item4; }
+
+                .contact-item {
+                    display: flex;
+                    align-items: center;
+                    gap: map.get($contact-item, gap);
+                    
+                    img {
+                        height: map.get($contact-item, img-size);
+                        width: map.get($contact-item, img-size);
+                    }
+
+                    .time-available,
+                    .location-name {
+                        display: flex;
+                        flex-direction: column;
+                    }
+                }
+
+            }
+        }
+    }
+
+    .footer-copyright-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: $copyright-margin-top;
+
+        .footer-copyright {
+            color: $color-copyright;
+            font-size: $font-14;
+
+            @include set-font-family($font-family-inter);
+        }
+    }
+}

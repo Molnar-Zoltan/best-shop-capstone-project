@@ -1,0 +1,88 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+@use '../base/fonts' as *;
+@use "sass:map";
+
+.products-items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: $products-items-gap;
+
+    .products-item {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: map.get($product-item, gap);
+        height: map.get($product-item, height);
+        width: map.get($product-item, width);
+
+        .product-image-container {
+            height: map.get($product-image-container, height);
+            width: map.get($product-image-container, width);
+            background: $color-benefits-background center/cover no-repeat;
+            box-shadow: map.get($product-image-container, box-shadow);
+            transition: map.get($product-image-container, transition);
+
+            &:hover {
+                cursor: pointer;
+                transform: map.get($product-image-container, transform-hover);
+            }
+
+            .product-sale {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background-color: $color-accent;
+                color: $color-background;
+                height: map.get($product-sale, height);
+                width: map.get($product-sale, width);
+                font-weight: $font-weight-bold;
+                font-size: $font-12;
+                border-radius: map.get($product-sale, border-radius);
+                margin: map.get($product-sale, margin);
+            }
+        }
+
+        .product-details {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            text-align: center;
+            flex: map.get($product-card-details, flex);
+
+            .product-text-container {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                height: $product-text-container-height;
+
+                .product-name,
+                .product-price {
+                    font-size: $font-18;
+                    font-weight: $font-weight-bold;
+
+                    @media (min-width: $breakpoint-sm) {
+                        font-size: $font-19;
+                    }
+                }
+
+                .product-price {
+                    color: $color-benefits-background;
+                    margin-bottom: $product-price-margin-bottom;
+                }
+            }
+
+            button {
+                @include setup-button(
+                    map.get($product-card-details, button-height),
+                    map.get($product-card-details, button-width),
+                    $font-family-sf-pro
+                );
+
+                font-size: $font-17;
+            }
+        }
+    }
+}

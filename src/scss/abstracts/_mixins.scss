@@ -1,0 +1,137 @@
+@use '../base/fonts' as *;
+@use './variables' as *;
+@use 'sass:map';
+
+@mixin transition-color($property: 'color') {
+    @if 
+        $property == 'color' or 
+        $property == 'fill' or
+        $property == 'border-color' or
+        $property == 'opacity'  {
+        transition: #{$property} 0.2s ease 0.1s;
+    }
+}
+
+@mixin set-font-family($font-family) {
+    font-family: #{$font-family}, sans-serif;
+}
+
+@mixin setup-user-icons($icon-size, $icons-gap) {
+        gap: $icons-gap;
+        margin-right: #{$icons-gap};
+
+        .login-icon,
+        .cart-icon {
+            height: $icon-size;
+            width: $icon-size;
+            position: relative;
+        }
+}
+
+@mixin setup-socials($socials-size, $socials-gap) {
+    gap: $socials-gap;
+
+    img {
+        height: $socials-size;
+        width: $socials-size;
+    }
+}
+
+@mixin setup-title(
+    $logo-container-size, 
+    $logo-size, 
+    $title-container-gap, 
+    $font-size-title) {
+    gap: $title-container-gap;
+
+    .logo-container {
+        height: $logo-container-size;
+        width: $logo-container-size;
+
+        img {
+            width: $logo-size;
+            height: $logo-size;
+        }
+    }
+
+    .title {
+        font-size: $font-size-title;
+    }
+}
+
+@mixin setup-button($height: 0px, $width: 0px, $font-family: $font-family-primary) {
+    min-height: $height;
+    width: $width;
+    font-family: $font-family;
+}
+
+@mixin interactive-image-button {
+    img {
+        @include transition-color('opacity');
+        
+        &:hover,
+        &:active {
+            opacity: $interactive-image-button-opacity;
+            cursor: pointer;
+        }
+    }
+}
+
+@mixin set-login-input-size($height, $width) {
+    height: $height;
+    width: $width;
+}
+
+@mixin set-offers-font-size($h1-font-size, $p-font-size) {
+    h1 {
+        font-size: $h1-font-size;
+    }
+
+    p {
+        font-size: $p-font-size;
+    }
+}
+
+@mixin background-with-overlay($image) {
+    background: $linear-gradient-overlay,
+                url($image) center/cover no-repeat;
+}
+
+@mixin underline-accent($offset) {
+    text-decoration: underline;
+    text-decoration-color: $color-accent;
+    text-underline-offset: $offset;
+}
+
+@mixin hide-input-label($element: 'input') {
+    @if $element == 'input' or $element == 'textarea' {
+        #{$element}:not(:placeholder-shown) + label {
+            opacity: $opacity-hide;
+            visibility: hidden;
+        }
+    }
+}
+
+@mixin filters-container-base() {
+    display: flex;
+    flex-direction: column;
+    gap: $filter-sales-container-gap;
+}
+
+@mixin popup-background() {
+    position: fixed;
+    inset: map.get($popup-overlay, inset);
+    background: map.get($popup-overlay, background-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: map.get($popup-overlay, z-index);
+    opacity: map.get($popup-overlay, opacity);
+    pointer-events: none;
+    transition: map.get($popup-overlay, transition);
+
+    &.show {
+        opacity: map.get($popup-overlay, opacity-show);
+        pointer-events: all;      
+    }
+}

@@ -1,0 +1,227 @@
+@use '../base/fonts' as *;
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+@use 'sass:map';
+
+.content-contact {
+    display: flex;
+    flex-direction: column;
+    gap: $content-contact-gap;
+    align-items: center;
+    margin-bottom: $content-contact-gap;
+    
+    .header-contact {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: map.get($header-contact, width);
+        height: map.get($header-contact, height);
+        gap: map.get($header-contact, gap);
+
+        @include background-with-overlay('#{$img-location-png}contact-header.png');
+
+        .header-contact-description {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            line-height: $line-height-base;
+        }
+
+    }
+
+    .contact-information {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: map.get($contact-information, gap);
+        margin: map.get($contact-information, margin);
+
+
+
+        .contact-information-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: $contact-information-item-gap;
+
+            .item-information-image {
+                height: map.get($item-information-image, size);
+                width: map.get($item-information-image, size);
+                border-radius: map.get($item-information-image, border-radius);
+            }
+
+            .item-information-name {
+                font-weight: $font-weight-bold;
+                font-size: $font-20;
+            }
+
+            .item-information-description-container {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                line-height: $line-height-base;
+
+                .item-information-description {
+                    font-size: $font-17;
+                }
+            }
+        }
+    }
+
+    .contact-main {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+
+
+        img {
+            height: map.get($contact-main-img, height-sm);
+
+            @media (min-width: $breakpoint-sm) {
+                height: map.get($contact-main-img, height-md);
+            }
+
+            @media (min-width: $breakpoint-lg) {
+                height: map.get($contact-main-img, height);
+            }
+        }
+
+        .feedback-container {
+            display: flex;
+            flex-direction: column;
+            gap: $feedback-container-gap;
+            margin: 0 0.8rem;
+
+            .feedback-description {
+                display: flex;
+                flex-direction: column;
+                gap: $feedback-description-gap;
+
+                .feedback-description-title {
+                    font-size: $font-16;
+
+                    @media (min-width: $breakpoint-sm) {
+                        font-size: $font-20;
+                    }
+
+                    @media (min-width: $breakpoint-lg) {
+                        font-size: $font-25;
+                    }
+                }
+
+                .feedback-description-text {
+                    font-size: $font-12;
+
+                    @media (min-width: $breakpoint-sm) {
+                        font-size: $font-14;
+                    }
+
+
+                    @media (min-width: $breakpoint-lg) {
+                        font-size: $font-17;
+                    }
+                }
+            }
+
+            .contact-form {
+                display: flex;
+                flex-direction: column;
+                gap: $contact-form-gap;
+                
+                .contact-field {
+                    display: flex;
+                    flex-direction: column;
+                    gap: $contact-field-gap;
+
+                    label {
+                        font-weight: $font-weight-bold;
+                        font-size: $font-12;
+
+                        @media (min-width: $breakpoint-sm) {
+                            font-size: $font-16;
+                        }
+
+                        @media (min-width: $breakpoint-lg) {
+                            font-size: $font-18;
+                        }
+                    }
+
+                    input[type="text"],
+                    input[type="email"] {
+                        height: map.get($contact-form-input, height-sm);
+                        width: map.get($contact-form-input, width-sm);
+
+                        @media (min-width: $breakpoint-sm) {
+                            height: map.get($contact-form-input, height-md);
+                            width: map.get($contact-form-input, width-md);
+                        }
+
+                        @media (min-width: $breakpoint-lg) {
+                            height: map.get($contact-form-input, height);
+                            width: map.get($contact-form-input, width);
+                        }
+                    }
+
+                    textarea {
+                        height: $contact-form-textarea-height;       
+                        width: map.get($contact-form-input, width-sm);
+                        resize: none;
+
+                        @media (min-width: $breakpoint-sm) {
+                            width: map.get($contact-form-input, width-md);
+                        }
+
+                        @media (min-width: $breakpoint-lg) {
+                            width: map.get($contact-form-input, width);
+                        }
+
+                    }
+
+                    .contact-error-message {
+                        display: none;
+                        color: $color-accent;
+                        font-weight: $font-weight-semibold;
+                        font-size: $font-12;
+
+                        @media (min-width: $breakpoint-sm) {
+                            font-size: $font-16;
+                        }
+                    }
+                }
+
+                .contact-success-message {
+                    display: none;
+                    max-width: map.get($contact-form-input, width-sm);
+                    font-weight: $font-weight-semibold;
+                    color: $color-accent;
+                    font-size: $font-14;
+
+                    @media (min-width: $breakpoint-sm) {
+                        max-width: map.get($contact-form-input, width-md);
+                        font-size: $font-16;
+                    }
+
+                    @media (min-width: $breakpoint-lg) {
+                        max-width: map.get($contact-form-input, width);
+                    }
+                }
+
+                button[type="submit"] {
+                    @include setup-button(
+                        map.get($contact-form-button, height),
+                        map.get($contact-form-button, width),
+                        $font-family-helvetica
+                    );
+
+                    font-size: $font-12;
+                }
+
+            }
+
+        }
+
+    }
+}

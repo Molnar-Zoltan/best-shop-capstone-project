@@ -1,0 +1,340 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+@use 'sass:map';
+
+.content-home {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: map.get($content-home, gap);
+    margin-bottom: map.get($content-home, margin-bottom);
+
+    .home-section-title {
+        font-size: $font-30;
+        font-weight: $font-weight-black;
+        font-variation-settings: "wght" $font-weight-home-section-title;
+
+        @media (min-width: $breakpoint-sm) {
+            font-size: $font-40;
+        }
+    }
+
+    .home-section-title-container {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        gap: $home-section-title-container-gap;
+    }
+
+    .home-section-subtitle {
+        @media (min-width: $breakpoint-sm) {
+            font-size: $font-17;
+        }
+    }
+
+    .header-home {
+        display: flex;
+        flex-direction: column;
+        background-color: $color-home-header-background;
+        align-items: center;
+        justify-content: center;
+        width: map.get($header-home, width);
+        min-height: map.get($header-home, min-height);
+        padding: map.get($header-home, padding);
+
+
+        @media (min-width: $breakpoint-md) {
+            flex-direction: row;
+        }
+
+        .header-home-description-container {
+            display: flex;
+            flex-direction: column;
+            gap: map.get($header-home-description-container, gap);
+            max-width: map.get($header-home-description-container, max-width-mobile);
+
+            @media (min-width: $breakpoint-sm) {
+                max-width: map.get($header-home-description-container, max-width-sm);
+            }
+
+            .header-home-title {
+                @extend .home-section-title;
+                
+                font-size: $font-36;
+
+                @media (min-width: $breakpoint-sm) {
+                    font-size: $font-50;
+                }
+            }
+
+            .header-home-descriptions {
+                display: flex;
+                flex-direction: column;
+                line-height: $line-height-base;
+                font-size: $font-17;
+            }
+
+            .header-home-button {
+                @include setup-button(
+                    map.get($header-home-button, height), 
+                    map.get($header-home-button, width)
+                );
+
+                font-size: $font-18;
+            }
+        }
+        
+        .header-home-image-container {
+            img {
+                height: map.get($header-home-image, height-mobile);
+
+                @media (min-width: $breakpoint-sm) {
+                    height: map.get($header-home-image, height-sm);
+                }
+
+                @media (min-width: $breakpoint-lg) {
+                    height: map.get($header-home-image, height-lg);
+                }
+            }
+        }
+    }
+
+    .hero-home {
+        display: flex;
+        flex-flow: column wrap;
+        margin-top: map.get($hero-home, margin-top);
+        align-items: center;
+        background-color: $color-background;
+        max-width: map.get($hero-home, max-width-mobile);
+        min-height: map.get($hero-home, min-height);
+        box-shadow: map.get($hero-home, box-shadow);
+        line-height: $line-height-base;
+
+        @media (min-width: $breakpoint-sm) {
+            max-width: map.get($hero-home, max-width-sm);
+        }
+
+        @media (min-width: $breakpoint-lg) {
+            flex-direction: row;
+        }
+
+        .hero-home-description-container {
+            display: flex;
+            flex-direction: column;
+            min-height: inherit;
+            flex: map.get($hero-home-description-container, flex);
+            padding: map.get($hero-home-description-container, padding-mobile);
+            justify-content: center;
+            gap: map.get($hero-home-description-container, gap);
+
+            @media (min-width: $breakpoint-sm) {
+                padding: map.get($hero-home-description-container, padding-sm);
+            }
+
+
+            .hero-home-person {
+                display: flex;
+                align-items: center;
+                gap: map.get($hero-home-person, gap);
+                
+                .hero-home-image-container {
+                    img {
+                        width: map.get($hero-home-person, image-container-width);
+                        height: auto;
+                        object-fit: contain;
+                    }
+                }     
+            }
+
+            .hero-home-description {
+                display: flex;
+                flex-direction: column;
+                gap: map.get($hero-home-description, gap);
+                max-width: map.get($hero-home-description, max-width);
+            }
+
+        }
+
+        .hero-home-discount-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: inherit;
+            width: map.get($hero-home-discount-container, width-mobile);
+            padding: map.get($hero-home-discount-container, padding-mobile);
+            text-align: center;
+            gap: map.get($hero-home-discount-container, gap);
+            color: $color-background;
+
+            @include background-with-overlay('#{$img-location-png}home-hero-image.png');
+
+            @media (min-width: $breakpoint-sm) {
+                align-items: flex-start;
+                text-align: start;
+                width: map.get($hero-home-discount-container, width-sm);
+                padding-left: map.get($hero-home-discount-container, padding-left-sm);
+            }
+
+            .home-discount-description {
+                max-width: map.get($hero-home-discount-container, description-max-width);  
+            }
+
+            button {
+                @include setup-button(
+                    map.get($hero-home-discount-container, button-height),
+                    map.get($hero-home-discount-container, button-width)
+                );
+
+                font-size: $font-18;
+            }
+        }
+    }
+
+    .home-selected-products-container, .home-new-products-container {
+        display: flex;
+        flex-direction: column;
+        gap: map.get($home-products-container, gap);
+        padding: map.get($home-products-container, padding);
+    }
+
+    .home-travel-suitcases-container {
+        display: flex;
+        flex-direction: column;
+        gap: map.get($home-travel-suitcases-container, gap);
+        padding: map.get($home-travel-suitcases-container, padding-mobile);
+
+        @media (min-width: $breakpoint-sm) {
+            padding: map.get($home-travel-suitcases-container, padding-sm);
+        }
+        
+        .travel-suitcases-items-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: $travel-suitcases-items-container-gap;
+
+
+            .travel-suitcases-items {
+                display: flex;
+                gap: $travel-suitcases-items-gap;
+                flex-wrap: wrap;
+                justify-content: center;
+                align-items: center;
+
+                .travel-suitcases-item {
+                    display: flex;
+                    justify-content: center;
+                    align-items: flex-end;
+                    line-height: $line-height-base;
+                    width: map.get($travel-suitcases-item, width-mobile);
+                    height: map.get($travel-suitcases-item, height-mobile);
+
+                    @media (min-width: $breakpoint-sm) {
+                        width: map.get($travel-suitcases-item, width-sm);
+                        height: map.get($travel-suitcases-item, height-sm);
+                    }
+
+                    background: $color-benefits-background center/cover no-repeat;
+                    color: $color-background;
+                    font-size: $font-19;
+                    transition: map.get($travel-suitcases-item, transition);
+
+                    &:hover {
+                        transform: map.get($travel-suitcases-item, transform-hover);
+                        box-shadow: map.get($travel-suitcases-item, box-shadow-hover);
+                        cursor: pointer;
+                    }
+                    
+                    .suitcase-text-container {
+                        display: flex;
+                        flex-direction: column;
+                        gap: map.get($suitcase-text-container, gap);
+                        padding-left: map.get($suitcase-text-container, padding-left-mobile);
+                        padding-right: map.get($suitcase-text-container, padding-right-mobile);
+                        margin-bottom: map.get($suitcase-text-container, margin-bottom-mobile);
+                        font-size: $font-12;
+
+                        @media (min-width: $breakpoint-sm) {
+                            font-size: $font-19;
+                            padding-left: map.get($suitcase-text-container, padding-left-sm);
+                            padding-right: map.get($suitcase-text-container, padding-right-sm);
+                            margin-bottom: map.get($suitcase-text-container, margin-bottom-sm);
+                        }
+                        
+                        .suitcase-title {
+                            font-weight: $font-weight-bold;
+                        }
+                    }
+                }
+            }
+
+        }
+
+        .image-slider-previous, .image-slider-next {
+            height: map.get($image-slider, size);
+            width: map.get($image-slider, size);
+            cursor: pointer;
+
+            @include transition-color('opacity');
+
+            &:hover,
+            &:active {
+                opacity: map.get($image-slider, opacity-hover);
+            }
+        }
+    }
+
+    .our-customers-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: map.get($our-customers-container, gap);
+        
+        @media (min-width: $breakpoint-sm) {
+            padding: map.get($our-customers-container, padding-sm);
+        }
+
+        .our-customers-items {
+            display: flex;
+            gap: $our-customers-items-gap;
+            flex-wrap: wrap;
+            justify-content: center;
+
+            .customer-card {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                gap: map.get($customer-card, gap);
+                height: map.get($customer-card, height-mobile);
+                width: map.get($customer-card, width-mobile);
+                line-height: $line-height-base;
+                box-shadow: map.get($customer-card, box-shadow);
+                padding: map.get($customer-card, padding);
+
+                @media (min-width: $breakpoint-sm) {
+                    height: map.get($customer-card, height-sm);
+                    width: map.get($customer-card, width-sm);
+                }
+
+
+                .customer-image {
+                    height: $customer-image-size;
+                    width: $customer-image-size;
+                }
+
+                p {
+                    font-size: $font-17;
+                    text-align: center;
+                }
+
+                .customer-information {
+                    color: $color-accent;
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+
+}

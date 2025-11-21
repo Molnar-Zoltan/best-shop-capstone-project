@@ -1,0 +1,610 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+@use '../base/fonts' as *;
+@use 'sass:map';
+
+.content-product {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: map.get($content-product, margin-bottom);
+    gap: map.get($content-product, gap);
+
+
+    .product-information-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        max-width: map.get($product-information-container, max-width-mobile);
+        height: map.get($product-information-container, height-mobile);
+        gap: map.get($product-information-container, gap);
+        
+
+        @media (min-width: $breakpoint-lg) {
+            flex-direction: row;
+            max-width: map.get($product-information-container, max-width-lg);
+            height: map.get($product-information-container, height-lg);
+        }
+
+        .product-images-container {
+            display: flex;
+            flex-direction: column;
+            gap: $product-images-container-gap;
+            align-items: center;
+
+            @media (min-width: $breakpoint-sm) {
+                align-items: stretch;
+            }
+
+            .product-image-main {
+                width: map.get($product-image-main, width-mobile);
+                height: map.get($product-image-main, height-mobile);
+                overflow: hidden;
+
+                @media (min-width: $breakpoint-sm) {
+                    width: map.get($product-image-main, width-sm);
+                    height: map.get($product-image-main, height-sm);
+                }
+
+                img {
+                    width: map.get($product-image-main, img-width);
+                    height: map.get($product-image-main, img-height);
+                    object-fit: cover;
+                    object-position: center;
+                    display: block;
+                }
+            }
+
+            .product-images {
+                display: flex;
+                gap: map.get($product-images, gap);
+                flex-wrap: wrap;
+                justify-content: center;
+                padding: map.get($product-images, padding-mobile);
+
+                @media (min-width: $breakpoint-sm) {
+                    justify-content: flex-start;
+                    padding: map.get($product-images, padding-sm);
+                }
+            }
+        }
+
+        .product-information {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: map.get($product-information, height);
+            gap: map.get($product-information, gap-mobile);
+
+            @media (min-width: $breakpoint-lg) {
+                gap: map.get($product-information, gap-lg);
+            }
+            
+            .product-name-container {
+                display: flex;
+                flex-direction: column;
+                gap: map.get($product-name-container, gap);
+                padding: map.get($product-name-container, padding);
+
+                .product-name {
+                    font-size: $font-24;
+
+                    @media (min-width: $breakpoint-sm) {
+                        font-size: $font-30;
+                    }
+                }
+
+                .product-price {
+                    font-size: $font-20;
+                }
+
+                .product-rating-container {
+                    display: flex;
+                    gap: $product-rating-container-gap;
+
+                    .product-review {
+                        font-size: $font-13;
+                        color: $color-benefits-background;
+                    }
+                }
+                
+            }
+
+            .product-information-description {
+                display: flex;
+                flex-direction: column;
+                line-height: $line-height-base;
+                gap: map.get($product-information-description, gap);
+                padding: map.get($product-information-description, padding);
+                font-size: $font-17;
+                color: $color-benefits-background;
+                
+                @media (min-width: $breakpoint-lg) {
+                    margin-top: map.get($product-information-description, margin-top-lg);
+                }
+            }
+
+            .product-properties {
+                display: flex;
+                flex-direction: column;
+                gap: $product-properties-gap;
+                align-items: center;
+
+                @media (min-width: $breakpoint-sm) {
+                    align-items: stretch;
+                }
+
+                .dropdown-size-container,
+                .dropdown-color-container,
+                .dropdown-category-container {
+                    display: flex;
+                    flex-direction: column;
+                    gap: map.get($dropdown-container, gap);
+                    max-width: map.get($dropdown-container, max-width-mobile);
+
+                    @media (min-width: $breakpoint-sm) {
+                        max-width: map.get($dropdown-container, max-width-sm);
+                    }
+
+                    label {
+                        color: $color-benefits-background;
+                        font-weight: $font-weight-bold;
+                        font-size: $font-17;
+                    }
+
+                    select {
+                        height: map.get($dropdown-container, select-height);
+                        max-width: map.get($dropdown-container, select-max-width);
+                        color: $color-header-border;
+                        font-size: $font-13;
+                        border-color: $color-page-header-description;
+                        padding: map.get($dropdown-container, select-padding);
+                    }
+                }
+
+            }
+
+            .add-to-cart-container {
+                display: flex;
+                gap: $add-to-cart-container-gap;
+                flex-direction: column;
+                align-items: center;
+
+                @media (min-width: $breakpoint-sm) {
+                    flex-direction: row;
+                    align-items: flex-start;
+                }
+
+                .quantity-selector {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    gap: map.get($quantity-selector, gap);
+                    border: map.get($quantity-selector, border);
+                    width: map.get($quantity-selector, width);
+                    height: map.get($quantity-selector, height);
+                    font-size: $font-25;
+                    font-weight: $font-weight-bold;
+                    color: $color-quantity-selector;
+                    -webkit-user-select: none;
+                    user-select: none;
+
+                    .quantity-number-container {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        height: inherit;
+                        width: $quantity-number-container-width;
+                    }
+
+                    .quantity-minus,
+                    .quantity-plus {
+                        @include transition-color('opacity');
+
+                        &:hover {
+                            cursor: pointer;
+                            opacity: $quantity-operation-opacity-hover;
+                        }
+                    }
+                }
+
+                .add-to-cart-button {
+                    @include setup-button(
+                        map.get($add-to-cart-button, height), 
+                        map.get($add-to-cart-button, width-mobile) 
+                    );
+
+                    @media (min-width: $breakpoint-sm) {
+                        @include setup-button(
+                            map.get($add-to-cart-button, height), 
+                            map.get($add-to-cart-button, width-sm)
+                        );
+                    }
+                }
+            }
+
+            .payment-methods {
+                display: flex;
+                align-items: center;
+                gap: $payment-methods-gap;
+                justify-content: center;
+                flex-direction: column;
+
+                @media (min-width: $breakpoint-sm) {
+                    flex-direction: row;
+                    justify-content: flex-start;
+                }
+                
+                p {
+                    color: $color-header-border;
+                    font-size: $font-23;
+                    font-weight: $font-weight-bold;
+                }
+            }
+        }
+
+    }
+
+    .product-details-container {
+        display: flex;
+        flex-direction: column;
+        gap: $product-details-container-gap;
+
+        .product-details-tabs {
+            display: flex;
+            justify-content: center;
+            gap: map.get($product-details-tab, gap-mobile);
+            width: map.get($product-details-tab, width);
+            flex-wrap: wrap;
+            align-items: center;
+            font-size: $font-16;
+            font-weight: $font-weight-bold;
+            padding: map.get($product-details-tab, padding);
+            -webkit-user-select: none;
+            user-select: none;
+
+            @media (min-width: $breakpoint-sm) {
+                flex-direction: row;
+                align-items: stretch;
+                gap: map.get($product-details-tab, gap-sm);
+                font-size: $font-17;
+            }
+
+            .tab-active {
+                @include underline-accent(
+                    map.get($product-details-tab, details-text-underline-offset)
+                );
+
+                text-decoration-thickness: map.get(
+                    $product-details-tab, details-text-decoration-thickness
+                );
+            }
+
+            .details,
+            .reviews,
+            .shipping-policy {
+                cursor: pointer;
+                
+                &:hover,
+                &:active {
+                    @extend .tab-active;
+                }
+            }
+
+        }
+
+        .product-details {
+            display: flex;
+            flex-direction: column;
+            gap: map.get($product-details, gap);
+            max-width: map.get($product-details, max-width-mobile);
+            line-height: $line-height-base;
+            color: $color-benefits-background;
+            padding: map.get($product-details, padding-mobile);
+            font-size: $font-17;
+
+            @media (min-width: $breakpoint-lg) {
+                max-width: map.get($product-details, max-width-lg);
+                padding: map.get($product-details, padding-lg);
+            }
+        }
+
+        .product-reviews {
+            display: none;
+            gap: map.get($product-reviews, gap-mobile);
+            flex-wrap: wrap;
+            padding: map.get($product-reviews, padding);
+            justify-content: center;
+
+            @media (min-width: $breakpoint-sm) {
+                gap: map.get($product-reviews, gap-sm);
+            }
+
+            .reviews-container {
+                display: flex;
+                flex-direction: column;
+                gap: $reviews-container-gap;
+
+                .reviews-title {
+                    text-align: center;
+                    font-size: $font-17;
+
+                    @media (min-width: $breakpoint-sm) {
+                        text-align: start;
+                    }
+                }
+
+                .customer-review {
+                    display: flex;
+                    gap: $customer-review-gap;
+
+                    .customer-image-container {
+                        img {
+                            height: $customer-image-size;
+                            width: $customer-image-size;
+                        }
+                    }
+
+                    .customer-review-text-container {
+                        display: flex;
+                        flex-direction: column;
+                        gap: map.get($customer-review-text-container, gap);
+                        max-width: map.get($customer-review-text-container, max-width-mobile);
+
+                        @media (min-width: $breakpoint-sm) {
+                            max-width: map.get($customer-review-text-container, max-width-sm);
+                        }
+
+                        .review-header {
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: space-between;
+                            gap: map.get($review-header, gap-mobile);
+
+                            @media (min-width: $breakpoint-sm) {
+                                flex-direction: row;
+                                gap: map.get($review-header, gap-sm);
+                            }
+                            
+
+                            .customer-name-and-date {
+                                display: flex;
+                                gap: $customer-name-and-date-gap;
+
+                                .customer-name {
+                                    font-weight: $font-weight-bold;
+                                    color: $color-benefits-background;
+                                    font-size: $font-17;
+                                }
+
+                                .review-date {
+                                    font-size: $font-13;
+                                    color: $color-header-border;
+                                }
+                            }
+
+                        }
+
+                        .customer-review-text {
+                            line-height: $line-height-base;
+                            font-size: $font-17;
+                        }
+                    }
+
+
+                }
+            }
+
+            .add-review-container {
+                display: flex;
+                flex-direction: column;
+                gap: $add-review-container-gap;
+                align-items: center;
+
+                @media (min-width: $breakpoint-sm) {
+                    align-items: stretch;
+                }
+
+                .add-review-description {
+                    display: flex;
+                    flex-direction: column;
+                    gap: map.get($add-review-description, gap);
+                    max-width: map.get($add-review-description, max-width-mobile);
+                    align-items: center;
+
+                    @media (min-width: $breakpoint-sm) {
+                        max-width: map.get($add-review-description, max-width-sm);
+                        align-items: stretch;
+                    }
+
+                    h6 {
+                        font-size: $font-17;
+                    }
+
+                    p {
+                        font-size: $font-13;
+                    }
+                }
+
+                .add-review-form-container {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    gap: $add-review-form-container-gap;
+
+                    @media (min-width: $breakpoint-sm) {
+                        align-items: stretch;
+                    }
+
+                    .rate-product-container {
+                        display: flex;
+                        gap: $rate-product-container-gap;
+
+                        .rate-product-text {
+                            font-weight: $font-weight-bold;
+                            font-size: $font-13;
+                        }
+
+                        .rate-product-stars {
+                            @extend .product-rating;
+
+                            img {
+                                &:hover {
+                                    cursor: pointer;
+                                    background-image: url("#{$img-location-svg}star-full.svg");
+                                }
+                            }
+                        }
+                    }
+
+                    .add-review-form {
+                        display: flex;
+                        flex-direction: column;
+                        gap: $add-review-form-gap;
+                        align-items: center;
+
+                        @media (min-width: $breakpoint-sm) {
+                            align-items: stretch;
+                        }
+
+                        .textarea-container {
+                            position: relative;
+
+                            #your-review {
+                                width: map.get($your-review, width-mobile);
+                                height: map.get($your-review, height);
+                                resize: none;
+                                font-size: $font-13;
+
+                                @media (min-width: $breakpoint-sm) {
+                                    width: map.get($your-review, width-sm);
+                                }
+                            }
+
+                            label {
+                                position: absolute;
+                                left: map.get($your-review, label-left);
+                                top: map.get($your-review, label-top);
+                                color: $color-header-border;
+                                pointer-events: none;
+                                font-size: $font-13;
+                            }
+
+                            @include hide-input-label('textarea');
+                        }
+
+                        .customer-data-container {
+                            display: flex;
+                            justify-content: space-between;
+                            flex-wrap: wrap;
+                            width: map.get($customer-data-container, input-width);
+                            gap: map.get($customer-data-container, gap);
+
+                            @media (min-width: $breakpoint-sm) {
+                                width: map.get($customer-data-container, width-sm);
+                            }
+
+                            .field-container {
+                                position: relative;
+
+                                input {
+                                    height: map.get($customer-data-container, input-height);
+                                    width: map.get($customer-data-container, input-width);
+                                    font-size: $font-13;
+                                    padding: map.get($customer-data-container, input-padding);
+                                }
+
+                                label {
+                                    position: absolute;
+                                    top: map.get($customer-data-container, label-top);
+                                    transform: map.get($customer-data-container, label-transform);
+                                    left: map.get($customer-data-container, label-left);
+                                    color: $color-header-border;
+                                    pointer-events: none;
+                                    font-size: $font-13;
+                                }
+
+                                @include hide-input-label;
+                            }
+                        }
+
+                        .save-data-container {
+                            display: flex;
+                            align-items: center;
+                            gap: map.get($save-data-container, gap);
+                            max-width: map.get($save-data-container, max-width-mobile);
+                            justify-content: center;
+
+                            @media (min-width: $breakpoint-sm) {
+                                max-width: map.get($save-data-container, max-width-sm);
+                                justify-content: flex-start;
+                            }
+
+                            input[type="checkbox"] {
+                                height: map.get($save-data-container, checkbox-size);
+                                width: map.get($save-data-container, checkbox-size);
+                            }
+
+                            label {
+                                color: $color-header-border;
+                                font-size: $font-13;
+                            }
+                        }
+
+                        .error-message, .success-message {
+                            display: none;
+                            color: $color-accent;
+                            font-weight: $font-weight-semibold;
+                            font-size: $font-13;
+                        }
+
+                        button {
+                            margin-top: map.get($add-review-form-button, margin-top);
+
+                            @include setup-button(
+                                map.get($add-review-form-button, height), 
+                                map.get($add-review-form-button, width),
+                                $font-family-helvetica
+                            );
+
+                            font-size: $font-12;
+                        }
+                    }
+                }
+            }
+        }
+
+    }
+
+    .you-may-also-like-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: map.get($you-may-also-like-container, gap);
+        padding: map.get($you-may-also-like-container, padding);
+
+        h3 {
+            @include underline-accent(
+                map.get($you-may-also-like-container, h3-text-underline-offset)
+            );
+        }
+    }
+}
+
+.product-not-found {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: $product-not-found-padding;
+    text-align: center;
+}
+
+.product-rating {
+    display: flex;
+    gap: map.get($product-rating, gap);
+
+    img {
+        height: map.get($product-rating, image-size);
+        width: map.get($product-rating, image-size);
+    }
+}

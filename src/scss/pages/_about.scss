@@ -1,0 +1,168 @@
+@use '../base/fonts' as *;
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+@use 'sass:map';
+
+.content-about {
+    display: flex;
+    flex-direction: column;
+    gap: $content-about-gap;
+    align-items: center;
+    margin-bottom: $content-contact-gap;
+    
+    .header-about {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: map.get($header-about, width);
+        height: map.get($header-about, height);
+        gap: map.get($header-about, gap);
+
+        @include background-with-overlay('#{$img-location-png}about-header.png');
+
+        .header-about-description {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            line-height: $line-height-base;
+        }
+
+    }
+
+    .about-information {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: map.get($about-information, gap);
+        margin: map.get($about-information, margin);
+
+
+
+        .about-information-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: $about-information-item-gap;
+
+            .item-information-image {
+                height: map.get($item-information-image, size);
+                width: map.get($item-information-image, size);
+                border-radius: map.get($item-information-image, border-radius);
+            }
+
+            .item-information-name {
+                font-weight: $font-weight-bold;
+                font-size: $font-20;
+            }
+
+            .item-information-description {
+                text-align: center;
+                font-size: $font-17;
+                max-width: $about-information-description-width;
+            }
+        }
+    }
+
+    .about-new-arrivals {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: map.get($about-new-arrivals, gap);
+        margin: map.get($about-new-arrivals, margin);
+   
+
+        .new-arrivals-description-container {
+            display: flex;
+            flex-direction: column;
+            gap: map.get($new-arrivals, gap);
+            flex: map.get($new-arrivals, flex);
+
+            .new-arrivals-title {
+                margin-bottom: map.get($new-arrivals, title-margin-bottom);
+                font-size: $font-40;
+                font-weight: $font-weight-black;
+                font-variation-settings: "wght" 950;
+            }
+
+            .new-arrivals-description {
+                max-width: map.get($new-arrivals, description-width);
+                font-size: $font-17;
+                line-height: $line-height-base;
+            }
+
+            .see-all-models-button {
+                @include setup-button(
+                    map.get($see-all-models-button, height), 
+                    map.get($see-all-models-button, width)
+                );
+
+                font-size: $font-18;
+                margin-top: map.get($see-all-models-button, margin-top);
+                
+            }
+        }
+
+        .new-arrivals-image-container {
+            flex: map.get($new-arrivals-image-container, flex);
+
+            img {
+                width: map.get($new-arrivals-image-container, image-width);
+                height: auto;
+            }
+        }
+    }
+
+    .about-team {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: map.get($about-team, width);
+        gap: map.get($about-team, gap);
+
+        .about-team-title {
+            text-decoration: underline;
+            text-underline-offset: map.get($about-team, title-underline-offset);
+            text-decoration-color: $color-accent;
+            line-height: $line-height-base;
+            margin: map.get($about-new-arrivals, margin);
+            font-size: $font-40;
+            font-weight: $font-weight-black;
+            font-variation-settings: "wght" 950; 
+        }
+
+        .about-team-members-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: map.get($about-team-members-container, row-gap) map.get($about-team-members-container, column-gap);
+            margin: map.get($about-team-members-container, margin);
+
+            .about-team-member {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: map.get($about-team-member, gap);
+
+                .team-member-image {
+                    height: map.get($about-team-member, image-height-mobile);
+
+                    @media (min-width: $breakpoint-sm) {
+                        height: map.get($about-team-member, image-height);
+                    }
+                }
+
+                .team-member-name {
+                    font-size: $font-22;
+                }
+
+                .team-member-description {
+                    font-size: $font-17;
+                }
+
+            }
+        }
+    }
+
+}

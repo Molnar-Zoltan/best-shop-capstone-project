@@ -1,0 +1,206 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+@use "sass:map";
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+textarea {
+    border: map.get($input-text-password-email, border-width) solid $color-accent;
+    opacity: map.get($input-text-password-email, opacity);
+    border-radius: map.get($input-text-password-email, border-radius);
+    padding: map.get($input-text-password-email, padding);
+
+    @include transition-color('opacity');
+
+  &:focus {
+    opacity: map.get($input-text-password-email, opacity-focus);
+    outline: none;
+  }
+}
+
+input[type="checkbox"] {
+    accent-color: $color-accent;
+
+    &:hover,
+    &:active {
+        cursor: pointer;
+    }
+}
+
+a {
+    color: $color-text;
+    text-decoration: none;
+
+    @include transition-color;
+
+    &:hover,
+    &:active {
+        color: $color-accent;
+    }
+}
+
+.label-required {
+    color: $color-accent;
+}
+
+.page-header-title {
+    color: $color-background;
+    font-size: $font-30;
+
+    @media (min-width: $breakpoint-sm) {
+        font-size: $font-50;
+    }
+}
+
+.page-header-description {
+    color: $color-page-header-description;
+    font-size: $font-12;
+
+    @media (min-width: $breakpoint-sm) {
+        font-size: $font-17;
+    }
+}
+
+.offers {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: map.get($offers, padding);
+    width: map.get($offers, width);
+    gap: map.get($offers, gap-mobile);
+    
+
+    @media (min-width: $breakpoint-sm) {
+        flex-direction: row;
+        gap: map.get($offers, gap-sm);
+        max-width: map.get($offers, max-width-sm);
+    }
+
+    @media (min-width: $breakpoint-md) {
+        max-width: map.get($offers, max-width-md);
+    }
+
+    @media (min-width: $breakpoint-lg) {
+        max-width: map.get($offers, max-width-lg);
+    }
+
+    color: $color-background;
+
+    @include background-with-overlay('#{$img-location-png}about-offers.png');
+
+    .offers-discount-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        max-width: map.get($offers-discount-container, max-width);
+        height: map.get($offers-discount-container, height);
+
+        .offers-discount {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            line-height: map.get($offers-discount, line-height);
+            transform: map.get($offers-discount, transform);
+
+            h1 {
+                font-weight: $font-weight-black;
+                font-variation-settings: "wght" 950; 
+            }
+
+            p {
+                text-align: center;
+            } 
+            
+            @include set-offers-font-size(
+                map.get($offers-discount, h1-size-mobile), 
+                $font-16
+            );
+
+            @media (min-width: $breakpoint-sm) {
+                padding: map.get($offers-discount, padding-sm);
+            }
+
+            @media (min-width: $breakpoint-md) {
+                @include set-offers-font-size(
+                    map.get($offers-discount, h1-size-md),
+                    $font-18
+                );
+            }
+
+            @media (min-width: $breakpoint-lg) {
+                @include set-offers-font-size(
+                    map.get($offers-discount, h1-size-lg), 
+                    $font-20
+                );
+            }
+        }
+    }
+
+    .offers-of-the-month-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: map.get($offers-of-the-month, gap);
+        padding: map.get($offers-of-the-month, padding-mobile);
+        max-width: map.get($offers-of-the-month, max-width);
+        margin-left: map.get($offers-of-the-month, margin-left-mobile);
+
+        @include set-offers-font-size($font-24, $font-14);
+
+        p {
+            line-height: $line-height-base;
+            text-align: center;
+        }
+
+        h1 {
+            font-weight: $font-weight-black;
+            font-variation-settings: "wght" 950; 
+        }
+
+        @media (min-width: $breakpoint-sm) {
+            align-items: flex-start;
+
+            p {
+                text-align: left;
+                padding-right: map.get($offers-of-the-month, p-padding-right-sm);
+            }
+        }
+
+
+        @media (min-width: $breakpoint-md) {
+            @include set-offers-font-size($font-30, $font-14);
+
+            padding: map.get($offers-of-the-month, padding-md);
+        }
+
+
+        @media (min-width: $breakpoint-lg) {
+            @include set-offers-font-size($font-40, $font-17);
+
+            margin-left: map.get($offers-of-the-month, margin-left-lg);
+        }
+
+
+        
+        button {
+            font-size: $font-16;
+
+            @include setup-button(
+                map.get($offers-of-the-month, button-height-mobile), 
+                map.get($offers-of-the-month, button-width-mobile)
+            );
+
+            @media (min-width: $breakpoint-lg) {
+                @include setup-button(
+                    map.get($offers-of-the-month, button-height-lg), 
+                    map.get($offers-of-the-month, button-width-lg)
+                );
+
+                font-size: $font-18;
+            }
+        }
+    }
+}

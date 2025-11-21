@@ -1,0 +1,889 @@
+// ------------- Colors -------------
+$color-text: #000;
+$color-background: #FFF;
+$color-accent: #B92770;
+$color-header-border: #727174;
+$color-benefits-background: #504E4A;
+$color-copyright: #00000059;
+$color-page-header-description: #E9E9ED;
+$color-home-header-background: #E7E8E9;
+$color-quantity-selector: #707070;
+
+// ------------- Font Sizes -------------
+$font-9: 0.5625rem;
+$font-10: 0.625rem;
+$font-11: 0.6875rem;
+$font-12: 0.75rem;
+$font-13: 0.8125rem;
+$font-14: 0.875rem;
+$font-15: 0.9375rem;
+$font-16: 1rem;
+$font-17: 1.0625rem;
+$font-18: 1.125rem;
+$font-19: 1.1875rem;
+$font-20: 1.25rem;
+$font-22: 1.375rem;
+$font-23: 1.4375rem;
+$font-24: 1.5rem;
+$font-25: 1.5625rem;
+$font-30: 1.875rem;
+$font-34: 2.125rem;
+$font-36: 2.25rem;
+$font-40: 2.5rem;
+$font-48: 3rem;
+$font-50: 3.125rem;
+
+
+// ------------- Headings -------------
+$font-size-h1: $font-48;
+$font-size-h2: $font-36;
+$font-size-h3: $font-30;
+$font-size-h4: $font-24;
+$font-size-h5: $font-20;  
+$font-size-h6: $font-18;  
+
+// ------------- Font Weights -------------
+$font-weight-light: 300;
+$font-weight-normal: 400;
+$font-weight-medium: 500;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+$font-weight-black: 900;
+$font-weight-home-section-title: 950;
+
+// ------------- Line Height -------------
+$line-height-base: 1.5;
+
+// ------------- Breakpoints -------------
+$breakpoint-sm: 768px;
+$breakpoint-md: 1024px;
+$breakpoint-lg: 1440px;
+
+// ------------- Image Locations -------------
+$img-location-svg: '../assets/images/svg/';
+$img-location-png: '../assets/images/png/';
+
+// ------------- Forms -------------
+$input-text-password-email: (
+    border-width: 3px,
+    opacity: 0.5,
+    opacity-focus: 0.7,
+    border-radius: 0.1rem,
+    padding: 0.4rem 0.5rem
+);
+
+// ------------- Buttons -------------
+$buttons-border-radius: 0.1rem;
+$buttons-opacity-hover: 0.9;
+
+// ------------- Opacity -------------
+$opacity-hide: 0;
+$opacity-show: 1;
+
+// ------------- Body -------------
+$body-height: 100vh;
+
+// ------------- Header -------------
+$header: (
+    width: 1315px, // 1313px
+    height: 180px,
+    margin-top: 0px,
+    margin-bottom: 24px,
+    sticky-top: 0px,
+    padding: 30px 0,
+    border-radius: 0.5rem,
+    z-index: 99
+);
+$header-title-container: (
+    height: 37px,
+    margin-left: -70px,
+    margin-left-mobile: -10px,
+    gap: 0.4rem,
+    gap-mobile: 0.2rem
+);
+$header-title-opacity-hover: 0.6;
+$logo-container: (
+    size: 35px,
+    size-mobile: 20px,
+    border-radius: 20%,
+    shadow: 0 4px 4px rgb(0 0 0 / 25%)
+);
+$logo: (
+    size: 32px,
+    size-mobile: 15px,
+    shadow: 0 4px 4px rgb(0 0 0 / 25%)
+);
+$socials: (
+    size: 20px,
+    size-mobile: 15px,
+    gap: 1.2rem,
+    gap-mobile: 0.7rem
+);
+$user-icons: (
+    size: 34px,
+    size-mobile: 24px,
+    gap: 0.8rem,
+    gap-mobile: 0.5rem,
+);
+$cart-circle: (
+    size: 28px,
+    size-mobile: 22px,
+    margin-top: -3.4rem,
+    margin-top-mobile: -2.5rem,
+    margin-left: 1.3rem,
+    margin-left-mobile: 1rem
+);
+$hr: (
+    width: 1300px,
+    line-color: $color-header-border,
+    line-opacity: 0.2
+);
+$mobile-width: 90%;
+
+// ------------- Hamburger Button -------------
+$hamburger-button-container: (
+    margin-top: 25px,
+    margin-bottom: 20px,
+    button-size: 30px
+);
+
+// ------------- Nav -------------
+$nav: (
+    gap: 2rem,
+    gap-mobile: 1.2rem,
+);
+$nav-font-size: 18px;
+
+// ------------- Other -------------
+$catalog-menu-item: (
+    gap: 0.2rem,
+    arrow-size: 15px
+);
+$interactive-image-button-opacity: 0.5;
+
+// ------------- Footer -------------
+$footer: (
+    width: 100%,
+    gap: 8rem,
+    padding-bottom: 2.5rem,
+);
+
+// ------------- Footer Benefits -------------
+$footer-benefits: (
+    gap: 2rem,
+    padding-y: 20px 0,
+    width: 80%,
+    height: 192px
+);
+$benefits-item: (
+    gap: 0.8rem,
+    gap-container: 1rem,
+    span-width: 210px,
+    span-width-sm: 160px,
+    img-size: 60px,
+    img-size-sm: 35px
+);
+
+// ------------- Footer Information -------------
+$footer-information: (
+    gap: 4rem,
+    margin-sm: 0 8rem,
+    section-width: 40%
+);
+$information-general-links: (
+    gap: 2rem,
+    link-items-gap: 0.5rem
+);
+$information-general-links-gap: 2rem;
+$footer-information-title-gap: 1rem;
+$contact-items: (
+    row-gap: 2rem,
+    column-gap: 1rem
+);
+$contact-item: (
+    gap: 0.4rem,
+    img-size: 24px
+);
+
+// ------------- Footer Copyright -------------
+$copyright-margin-top: -1rem;
+
+// ------------- Popup Overlay -------------
+$popup-overlay: (
+    background-color: rgb(0 0 0 / 50%),
+    z-index: 100,
+    opacity: $opacity-hide,
+    opacity-show: $opacity-show,
+    inset: 0,
+    transition: opacity 0.3s ease
+);
+
+// ------------- Login -------------
+$login-window: (
+    padding: 1rem 4rem 2rem 4rem,
+    padding-mobile: 1rem 1.5rem 2rem 1.5rem,
+    border-radius: 0.4rem
+);
+$login-close-size: 24px;
+$login-form: (
+    gap: 1.5rem,
+    input-field-gap: 0.5rem,
+);
+$login-password-eye: (
+    right: 0.75rem,
+    size: 20px,
+    opacity: 0.6,
+    opacity-hover: $opacity-show
+);
+$login-input: (
+    height: 40px,
+    height-mobile: 35px,
+    width: 340px,
+    width-mobile: 280px
+);
+$login-remember-container-gap: 0.4rem;
+$login-checkbox-size: 14px;
+$login-button: (
+    height: 40px,
+    width: 100%
+);
+
+// ------------- Contact Page -------------
+$content-contact-gap: 8rem;
+$header-contact: (
+    width: 100%,
+    height: 555px,
+    gap: 2rem
+);
+$contact-information: (
+    gap: 4rem,
+    margin: 0 2rem
+);
+$contact-information-item-gap: 1.4rem;
+$item-information-image: (
+    size: 62px,
+    border-radius: 0.2rem
+);
+$contact-main-img: (
+    height: 840px,
+    height-md: 800px,
+    height-sm: 400px,
+    margin-bottom: -2.5rem
+);
+$feedback-container-gap: 4rem;
+$feedback-description-gap: 2rem;
+$contact-form-gap: 2rem;
+$contact-field-gap: 0.5rem;
+$contact-form-input: (
+    height: 44px,
+    height-md: 40px,
+    height-sm: 35px,
+    width: 600px,
+    width-md: 400px,
+    width-sm: 300px
+);
+$contact-form-textarea-height: 120px;
+$contact-form-button: (
+    height: 40px,
+    width: 90px
+);
+
+// ------------- About Page -------------
+$content-about-gap: 8rem;
+$header-about: (
+    width: 100%,
+    height: 555px,
+    gap: 2rem
+);
+$about-information: (
+    gap: 4rem,
+    margin: 0 2rem
+);
+$about-information-item-gap: 1.4rem;
+$about-information-description-width: 255px;
+$about-new-arrivals: (
+    gap: 2rem,
+    margin: 0 1rem
+);
+$new-arrivals: (
+    gap: 1.5rem,
+    flex: 1 1 350px,
+    title-margin-bottom: 0.5rem,
+    description-width: 650px
+);
+$see-all-models-button: (
+    height: 60px,
+    width: 200px,
+    margin-top: 1rem
+);
+$new-arrivals-image-container: (
+    flex: 1 1 300px,
+    image-width: 100%,
+);
+$about-team: (
+    width: 100%,
+    gap: 3.5rem,
+    title-underline-offset: 1rem
+);
+$about-team-members-container: (
+    column-gap: 3rem,
+    row-gap: 4rem,
+    margin: 0 1rem
+);
+$about-team-member: (
+    gap: 2rem,
+    image-height: 340px,
+    image-height-mobile: 250px
+);
+
+// ------------- Linear Gradient -------------
+$linear-gradient-overlay: linear-gradient(rgb(0 0 0 / 40%), rgb(0 0 0 / 40%));
+
+// ------------- Offers -------------
+$offers: (
+    padding: 5.22rem 0,
+    width: 90%,
+    gap-mobile: 6rem,
+    gap-sm: 2rem,
+    max-width-sm: 690px,
+    max-width-md: 950px,
+    max-width-lg: 1300px
+);
+$offers-discount-container: (
+    max-width: 480px,
+    height: 100%
+);
+$offers-discount: (
+    line-height: 1.2,
+    transform: translateY(-10%),
+    padding-sm: 0 5rem,
+    h1-size-mobile: 100px,
+    h1-size-md: 150px,
+    h1-size-lg: 223px
+);
+$offers-of-the-month: (
+    gap: 2rem,
+    padding-mobile: 0 2rem,
+    padding-md: 0,
+    margin-left-mobile: 0,
+    margin-left-lg: 8rem,
+    max-width: 440px,
+    p-padding-right-sm: 1.5rem,
+    button-height-mobile: 50px,
+    button-width-mobile: 160px,
+    button-height-lg: 60px,
+    button-width-lg: 200px
+);
+
+// ------------- Product Items -------------
+$products-items-gap: 2rem;
+$product-item: (
+    gap: 1rem,
+    height: 569px,
+    width: 296px
+);
+$product-image-container: (
+    height: 400px,
+    width: 100%,
+    box-shadow: (20px 20px 50px rgb(0 0 0 / 10%),
+                -20px -20px 50px rgb(0 0 0 / 10%)),
+    transition: transform 0.3s ease 0.1s,
+    transform-hover: scale(1.01)
+);
+$product-sale: (
+    height: 28px,
+    width: 54px,
+    border-radius: 0.2rem,
+    margin: 1rem
+);
+$product-card-details: (
+    flex: 1,
+    button-height: 40px,
+    button-width: 156px
+);
+$product-text-container-height: 100%;
+$product-price-margin-bottom: 1.2rem;
+
+// ------------- Homepage -------------
+$content-home: (
+    gap: 10rem,
+    margin-bottom: 5rem
+);
+$home-section-title-container-gap: 1rem;
+$header-home: (
+    width: 100%,
+    min-height: 860px,
+    padding: 3rem 3rem
+);
+$header-home-description-container: (
+    gap: 2rem,
+    max-width-mobile: 640px,
+    max-width-sm: 604px
+);
+$header-home-button: (
+    height: 60px,
+    width: 174px
+);
+$header-home-image: (
+    height-mobile: 200px,
+    height-sm: 500px,
+    height-lg: 625px
+);
+$hero-home: (
+    margin-top: -16rem,
+    max-width-mobile: 350px,
+    max-width-sm: 1300px,
+    min-height: 566px,
+    box-shadow: (20px 20px 50px rgb(0 0 0 / 10%),
+                -20px -20px 50px rgb(0 0 0 / 10%)),
+);
+$hero-home-description-container: (
+    flex: 1,
+    padding-mobile: 1rem,
+    padding-sm: 1rem 5.8rem,
+    gap: 1rem
+);
+$hero-home-person: (
+    gap: 1.5rem,
+    image-container-width: 100%
+);
+$hero-home-description: (
+    gap: 1.5rem,
+    max-width: 494px
+);
+$hero-home-discount-container: (
+    width-mobile: 350px,
+    width-sm: 646px,
+    padding-mobile: 0 2rem,
+    padding-left-sm: 4.8rem,
+    gap: 2rem,
+    description-max-width: 393px,
+    button-height: 60px,
+    button-width: 175px
+);
+$home-products-container: (
+    gap: 3.5rem,
+    padding: 0 2rem
+);
+$home-travel-suitcases-container: (
+    gap: 3.5rem,
+    padding-mobile: 0 1rem,
+    padding-sm: 0 2rem
+);
+$travel-suitcases-items-container-gap: 1.5rem;
+$travel-suitcases-items-gap: 2rem;
+$travel-suitcases-item: (
+    width-mobile: 148px,
+    width-sm: 296px,
+    height-mobile: 300px,
+    height-sm: 600px,
+    transition: (transform 0.3s ease 0.1s,
+                box-shadow 0.3s ease 0.1s),
+    transform-hover: scale(1.1),
+    box-shadow-hover: 0 15px 20px rgb(0 0 0 / 30%)
+);
+$suitcase-text-container: (
+    gap: 1rem,
+    padding-left-mobile: 1rem,
+    padding-right-mobile: 2rem,
+    margin-bottom-mobile: 1.5rem,
+    padding-left-sm: 2.5rem,
+    padding-right-sm: 4.5rem,
+    margin-bottom-sm: 2.6rem
+);
+$image-slider: (
+    size: 3rem,
+    opacity-hover: 0.6
+);
+$our-customers-container: (
+    gap: 3.5rem,
+    padding-sm: 0 2rem
+);
+$our-customers-items-gap: 2rem;
+$customer-card: (
+    gap: 2rem,
+    height-mobile: 350px,
+    width-mobile: 340px,
+    height-sm: 336px,
+    width-sm: 420px,
+    box-shadow: (20px 20px 50px rgb(0 0 0 / 10%),
+                -20px -20px 50px rgb(0 0 0 / 10%)),
+    padding: 0 3rem
+);
+$customer-image-size: 98px;
+
+// ------------- Product Details Page -------------
+$content-product: (
+    margin-bottom: 8rem,
+    gap: 5rem
+);
+$product-information-container: (
+    max-width-mobile: 700px,
+    height-mobile: 100%,
+    max-width-lg: 1324px,
+    height-lg: 1019px,
+    gap: 2.5rem
+);
+$product-images-container-gap: 0.8rem;
+$product-image-main: (
+    width-mobile: 300px,
+    height-mobile: 100%,
+    width-sm: 645px,
+    height-sm: 860px,
+    img-width: 100%,
+    img-height: 100%
+);
+$product-images: (
+    gap: 0.8rem,
+    padding-mobile: 0 2rem,
+    padding-sm: 0
+);
+$product-information: (
+    height: 100%,
+    gap-mobile: 2rem,
+    gap-lg: 0
+);
+$product-name-container: (
+    gap: 0.5rem,
+    padding: 0 2rem
+);
+$product-rating-container-gap: 1rem;
+$product-information-description: (
+    gap: 1rem,
+    padding: 0 2rem,
+    margin-top-lg: -3rem
+);
+$product-properties-gap: 2rem;
+$dropdown-container: (
+    gap: 0.5rem,
+    max-width-mobile: 300px,
+    max-width-sm: 100%,
+    select-height: 40px,
+    select-max-width: 612px,
+    select-padding: 0 0.5rem
+);
+$add-to-cart-container-gap: 2rem;
+$quantity-selector: (
+    gap: 1.8rem,
+    border: 2px solid $color-accent,
+    width: 130px,
+    height: 55px
+);
+$quantity-number-container-width: 10px;
+$quantity-operation-opacity-hover: 0.7;
+$add-to-cart-button: (
+    height: 55px,
+    width-mobile: 300px,
+    width-sm: 470px
+);
+$payment-methods-gap: 1rem;
+$product-details-container-gap: 3rem;
+$product-details-tab: (
+    gap-mobile: 3rem,
+    gap-sm: 8rem,
+    width: 100%,
+    padding: 0 2rem,
+    details-text-underline-offset: 0.8rem,
+    details-text-decoration-thickness: 2px
+);
+$product-details: (
+    gap: 2rem,
+    max-width-mobile: 700px,
+    max-width-lg: 1295px,
+    padding-mobile: 0 2rem,
+    padding-lg: 0
+);
+$you-may-also-like-container: (
+    gap: 4rem,
+    padding: 0 2rem,
+    h3-text-underline-offset: 1.2rem,
+);
+$product-reviews: (
+    gap-mobile: 4rem,
+    gap-sm: 10rem,
+    padding: 0 2rem,
+);
+$reviews-container-gap: 5rem;
+$customer-review-gap: 1.5rem;
+$customer-image-size: 46px;
+$customer-review-text-container: (
+    gap: 1.5rem,
+    max-width-mobile: 300px,
+    max-width-sm: 490px
+);
+$review-header: (
+    gap-mobile: 0.5rem,
+    gap-sm: 0
+);
+$customer-name-and-date-gap: 1.5rem;
+$add-review-container-gap: 2rem;
+$add-review-description: (
+    gap: 1rem,
+    max-width-mobile: 310px,
+    max-width-sm: 100%
+);
+$add-review-form-container-gap: 2rem;
+$rate-product-container-gap: 1rem;
+$add-review-form-gap: 1rem;
+$your-review: (
+    width-mobile: 293px,
+    width-sm: 604px,
+    height: 168px,
+    label-left: 0.75rem,
+    label-top: 0.5rem
+);
+$customer-data-container: (
+    width-sm: 604px,
+    gap: 1rem,
+    input-height: 40px,
+    input-width: 293px,
+    input-padding: 0 0.5rem,
+    label-top: 50%,
+    label-transform: translateY(-50%),
+    label-left: 0.7rem
+);
+$save-data-container: (
+    gap: 0.5rem,
+    max-width-mobile: 300px,
+    max-width-sm: 100%,
+    checkbox-size: 16px
+);
+$add-review-form-button: (
+    margin-top: 0.5rem,
+    height: 40px,
+    width: 90px
+);
+$product-rating: (
+    gap: 0.2rem,
+    image-size: 16.32px
+);
+$product-not-found-padding: 15rem 2rem;
+
+// ------------- Cart Page -------------
+$content-cart-width: 100%;
+$header-cart-height: 220px;
+$cart-products-gap: 1rem;
+$cart-products-header: (
+    gap-mobile: 1.5rem,
+    gap-sm: 3rem,
+    gap-md: 5rem,
+    gap-lg: 10rem,
+    height: 59px,
+    padding-right-mobile: 1rem,
+    padding-right-sm: 2.3rem
+);
+$cart-header-image: (
+    margin-left-mobile: 1rem,
+    margin-left-sm: 2rem
+);
+$cart-header-name: (
+    margin-left-mobile: 0.5rem,
+    margin-left-sm: -0.5rem,
+    margin-left-md: 1.5rem,
+    max-width-mobile: 55px,
+    max-width-sm: 100%
+);
+$cart-header-price-margin-left: -0.5rem;
+$cart-header-quantity: (
+    margin-left-mobile: -0.5rem,
+    margin-left-sm: 0
+);
+$cart-header-total: (
+    margin-left-mobile: -0.8rem,
+    margin-left-sm: 0.5rem,
+    margin-left-md: -0.8rem
+);
+$cart-header-delete: (
+    margin-left-mobile: -1rem,
+    margin-left-sm: 0,
+    margin-left-md: -1rem,
+    margin-left-lg: -1.7rem
+);
+$cart-products-container-gap: 1.5rem;
+$checkout-product: (
+    gap-mobile: 1rem,
+    gap-sm: 3rem,
+    gap-md: 5rem,
+    gap-lg: 10rem,
+    padding-bottom: 1rem,
+    border-bottom: 2px $color-accent solid
+);
+$cart-product-image: (
+    size-mobile: 70px,
+    size-md: 120px,
+    img-height: 100%
+);
+$cart-product-name: (
+    max-width-mobile: 55px,
+    max-width-sm: 95px,
+    max-width-md: 160px
+);
+$cart-product-quantity: (
+    gap-mobile: 0.4rem,
+    gap-sm: 1.2rem,
+    margin-left-mobile: 0.2rem,
+    margin-left-sm: 0,
+    quantity-width: 20px
+);
+$cart-product-total: (
+    width-mobile: 25px,
+    width-sm: 50px,
+    margin-left-mobile: 0.2rem,
+    margin-left-sm: 0
+);
+$cart-product-delete: (
+    size-mobile: 14px,
+    size-sm: 20px,
+    margin-left-mobile: 0.5rem,
+    margin-left-sm: 0,
+    margin-left-md: 1.2rem,
+    margin-left-lg: 0.7rem,
+    hover-opacity: 0.6
+);
+$footer-cart: (
+    width: 100%,
+    padding: 5rem 2rem,
+    gap: 3rem
+);
+$cart-button-container: (
+    gap: 2rem,
+    button-height: 60px,
+    button-width: 224px
+);
+$cart-checkout-container: (
+    width-mobile: 310px,
+    width-sm: 571px,
+    padding: 3rem 2.5rem 2.5rem 2.5rem,
+    gap: 2.5rem,
+    margin-bottom: 1rem
+);
+$cart-checkout-text-container: (
+    gap: 1rem,
+    hr-height: 2px
+);
+$checkout-button: (
+    height: 42px,
+    width: 229px
+);
+
+// ------------- Catalog Page -------------
+$content-catalog-gap: 2.5rem;
+$catalog-products-container-width: 914px;
+$catalog-products-header: (
+    min-height: 38px,
+    gap: 2rem,
+    margin: 0 0.2rem
+);
+$show-filters-button: (
+    height: 38px,
+    width: 120px
+);
+$sorting-dropdown: (
+    height: 38px,
+    width: 200px,
+    padding-left: 0.5rem
+);
+$catalog-products: (
+    column-gap: 0.5rem,
+    row-gap: 3rem,
+    margin-top: 2rem,
+    margin-bottom: 3rem,
+    padding: 0 0.1rem
+);
+$catalog-products-footer: (
+    margin-block: 0.7rem,
+    margin-inline: 0.2rem
+);
+$page-number: (
+    gap: 0.5rem,
+    span-padding: 0.5rem 0.9rem,
+    span-border-radius: 0.2rem
+);
+$next-container: (
+    min-width: 90px,
+    height: 38px,
+    border-radius: 0.2rem,
+    border: 2px solid $color-accent
+);
+$button-next: (
+    button-height: 100%,
+    img-size: 8px
+);
+$button-arrow-next-margin-left: 0.2rem;
+$button-arrow-previous: (
+    margin-right: 0.1rem,
+    transform: scaleX(-1)
+);
+$catalog-sidebar-container-width: 339px;
+$search-input: (
+    height: 38px,
+    width: 100%,
+    padding: 0 2rem 0 0.5rem
+);
+$search-button: (
+    right: 0.4rem,
+    top: 50%,
+    transform: translateY(-50%),
+    img-size: 17px
+);
+$catalog-sidebar-content-margin-top: 2rem;
+$sidebar-sets: (
+    gap: 1rem,
+    margin-top: 1.5rem,
+    padding-right: 1rem
+);
+$top-best-set-gap: 1.5rem;
+$set-image-container: (
+    size: 87px,
+    img-height: 100%
+);
+$set-content-max-width: 232px;
+$popup-product-content: (
+    border-radius: 0.2rem,
+    padding: 3rem,
+    gap: 3rem
+);
+$popup-product-close: (
+    height: 35px,
+    width: 80px
+);
+$popup-filters-content: (
+    border-radius: 0.2rem,
+    gap: 3rem,
+    padding: 2rem,
+    margin: 0 1rem
+);
+$popup-filters-container: (
+    gap: 2rem,
+    border: 2px $color-accent solid,
+    padding-bottom: 2rem,
+    padding-top: 1rem
+);
+$filters-dropdown: (
+    height: 40px,
+    width: 300px
+);
+$filters-dropdown-selected: (
+    height: 100%,
+    padding: 0 0.6rem,
+    border: 2px solid $color-page-header-description,
+    img-size: 8px
+);
+$filters-dropdown-content: (
+    top: 100%,
+    left: 0,
+    width: 100%,
+    border: 2px solid $color-page-header-description,
+    z-index: 1001,
+    div-padding: 0.5rem 0.6rem
+);
+$filter-sales-container-gap: 0.5rem;
+$sales-checkbox-container-height: 40px;
+$popup-filters-button-container: (
+    gap: 2rem,
+    width: 100%
+);
+$popup-filters-button: (
+    height: 60px,
+    width: 224px
+);

@@ -1,0 +1,17 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+button {
+    background-color: $color-accent;
+    color: $color-background;
+    font-weight: $font-weight-bold;
+    border: none;
+    border-radius: $buttons-border-radius;
+
+    @include transition-color('opacity');
+
+    &:hover {
+        cursor: pointer;
+        opacity: $buttons-opacity-hover;
+    }
+}

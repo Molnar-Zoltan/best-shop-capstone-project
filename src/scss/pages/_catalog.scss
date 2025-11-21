@@ -1,0 +1,372 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+@use '../base/fonts' as *;
+@use 'sass:map';
+
+.content-catalog {
+    display: flex;
+    justify-content: center;
+    gap: $content-catalog-gap;
+    flex-wrap: wrap;
+
+    .catalog-products-container {
+        display: flex;
+        flex-direction: column;
+        width: $catalog-products-container-width;
+
+        .catalog-products-header {
+            display: flex;
+            justify-content: space-between;
+            min-height: map.get($catalog-products-header, min-height);
+            flex-wrap: wrap;
+            gap: map.get($catalog-products-header, gap);
+            margin: map.get($catalog-products-header, margin);
+
+            .results {
+                font-size: $font-16;
+                color: $color-benefits-background;
+            }
+
+            .show-filters-button {
+                @include setup-button(
+                    map.get($show-filters-button, height), 
+                    map.get($show-filters-button, width)
+                );
+            }
+
+            .sorting {
+                #sorting-dropdown {
+                    height: map.get($sorting-dropdown, height);
+                    width: map.get($sorting-dropdown, width);
+                    font-size: $font-16;
+                    color: $color-benefits-background;
+                    padding-left: map.get($sorting-dropdown, padding-left);
+                }
+            }
+            
+        }
+
+        .catalog-products {
+            display: flex;
+            flex-wrap: wrap;
+            gap: map.get($catalog-products, row-gap) map.get($catalog-products, column-gap);
+            margin-top: map.get($catalog-products, margin-top);
+            margin-bottom: map.get($catalog-products, margin-bottom);
+            padding: map.get($catalog-products, padding);
+        }
+
+        .catalog-products-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-block: map.get($catalog-products-footer, margin-block);
+            margin-inline: map.get($catalog-products-footer, margin-inline);
+            flex-wrap: wrap;
+
+
+            .page-numbers {
+                display: flex;
+                align-items: center;
+                gap: map.get($page-number, gap);
+
+
+                .current-page {
+                    color: $color-background;
+                    background-color: $color-accent;
+                }
+
+                span {
+                    font-size: $font-15;
+                    font-weight: $font-weight-medium;
+                    padding: map.get($page-number, span-padding);
+                    border-radius: map.get($page-number, span-border-radius);
+
+                    @include set-font-family($font-family-helvetica);
+
+                    &:hover,
+                    &:active {
+                        cursor: pointer;
+
+                        @extend .current-page;
+                    }
+                }
+            }
+            
+            .previous-container,
+            .next-container {
+                display: flex;
+                justify-content: center;
+                min-width: map.get($next-container, min-width);
+                height: map.get($next-container, height);
+                border-radius: map.get($next-container, border-radius);
+                background-color: $color-background;
+                border: map.get($next-container, border);
+
+                &:hover,
+                &:active {
+                    cursor: pointer;
+                    background-color: $color-accent;
+                    color: $color-background;
+                }
+
+                .button-next,
+                .button-previous {
+                    background-color: inherit;
+                    
+                    button {
+                        background-color: inherit;
+                        height: map.get($button-next, button-height);
+                        font-size: $font-11;
+                        color: inherit;
+
+                        @include set-font-family($font-family-helvetica);
+                    }
+
+                    img {
+                        height: map.get($button-next, img-size);
+                        width: map.get($button-next, img-size);
+                    }
+
+                    .button-arrow-next {
+                        margin-left: $button-arrow-next-margin-left;
+                    }
+
+                    .button-arrow-previous {
+                        margin-right: map.get($button-arrow-previous, margin-right);
+                        transform: map.get($button-arrow-previous, transform);
+                    }
+
+                }
+            }
+        }
+    }
+
+
+    .catalog-sidebar-container {
+        display: flex;
+        flex-direction: column;
+        width: $catalog-sidebar-container-width;
+      
+
+        .catalog-sidebar-header {
+            .search-form {
+                position: relative;
+
+                #search-input {
+                    height: map.get($search-input, height);
+                    width: map.get($search-input, width);
+                    font-size: $font-16;
+                    color: $color-benefits-background;
+                    padding: map.get($search-input, padding);
+                }
+
+                .search-button {
+                    position: absolute;
+                    right: map.get($search-button, right);
+                    top: map.get($search-button, top);
+                    transform: map.get($search-button, transform);
+                    background: none;
+
+                    img {
+                        height: map.get($search-button, img-size);
+                        width: map.get($search-button, img-size);
+                    }
+                }
+            }
+
+        }
+
+        .catalog-sidebar-content {
+            margin-top: $catalog-sidebar-content-margin-top;
+
+            .sidebar-sets {
+                display: flex;
+                flex-direction: column;
+                gap: map.get($sidebar-sets, gap);
+                margin-top: map.get($sidebar-sets, margin-top);
+                padding-right: map.get($sidebar-sets, padding-right);   
+
+                .top-best-set {
+                    display: flex;
+                    align-items: center;
+                    gap: $top-best-set-gap;
+
+                    .set-image-container {
+                        display: flex;
+                        place-content: center center;
+                        height: map.get($set-image-container, size);
+                        width: map.get($set-image-container, size);
+
+                        img {
+                            height: map.get($set-image-container, img-height);
+                            width: auto;
+                            object-fit: cover;
+                            display: block;
+                        }
+
+                        &:hover {
+                            cursor: pointer;
+                        }
+                    }
+
+                    .set-content {
+                        display: flex;
+                        flex-direction: column;
+                        line-height: $line-height-base;
+                        max-width: $set-content-max-width;
+                        font-size: $font-15;
+                    }
+                }
+            }
+        }
+    }
+
+    .popup-product-not-found {
+        @include popup-background;
+
+        .popup-product-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: $color-background;
+            border-radius: map.get($popup-product-content, border-radius);
+            padding: map.get($popup-product-content, padding);
+            gap: map.get($popup-product-content, gap);
+            
+
+            p {
+                font-size: $font-18;
+            }
+
+            .popup-product-close {
+                @include setup-button(
+                    map.get($popup-product-close, height), 
+                    map.get($popup-product-close, width)
+                );
+            }
+        }
+    }
+
+    .popup-filters {
+        @include popup-background;
+        
+        .popup-filters-content {
+            display: flex;
+            flex-direction: column;
+            background: $color-background;
+            border-radius: map.get($popup-filters-content, border-radius);
+            gap: map.get($popup-filters-content, gap);
+            padding: map.get($popup-filters-content, padding);
+            margin: map.get($popup-filters-content, margin);
+
+            .popup-filters-container {
+                display: flex;
+                gap: map.get($popup-filters-container, gap);
+                flex-wrap: wrap;
+                justify-content: center;
+                border-bottom: map.get($popup-filters-container, border);
+                border-top: map.get($popup-filters-container, border);
+                padding-bottom: map.get($popup-filters-container, padding-bottom);
+                padding-top: map.get($popup-filters-container, padding-top);
+
+
+                .filters-dropdown-container {
+                    @include filters-container-base;
+
+                    .dropdown {
+                        position: relative;
+                        height: map.get($filters-dropdown, height);
+                        width: map.get($filters-dropdown, width);
+                        cursor: pointer;
+
+                        @include set-font-family($font-family-helvetica);
+
+                        font-size: $font-13;
+
+                        .dropdown-selected {
+                            display: flex;
+                            justify-content: space-between;
+                            align-items: center;
+                            height: map.get($filters-dropdown-selected, height);
+                            color: $color-header-border;
+                            padding: map.get($filters-dropdown-selected, padding);
+                            border: map.get($filters-dropdown-selected, border);
+
+                            img {
+                                width: map.get($filters-dropdown-selected, img-size);
+                                height: map.get($filters-dropdown-selected, img-size);
+                            }
+                        }
+
+                        .dropdown-content {
+                            display: none;
+                            position: absolute;
+                            top: map.get($filters-dropdown-content, top);
+                            left: map.get($filters-dropdown-content, left);
+                            width: map.get($filters-dropdown-content, width);
+                            background: $color-background;
+                            border: map.get($filters-dropdown-content, border);
+                            border-top: none;
+                            z-index: map.get($filters-dropdown-content, z-index);
+
+                            div {
+                                padding: map.get($filters-dropdown-content, div-padding);
+
+                                &:hover {
+                                    background: $color-page-header-description;
+                                }
+                            }
+                        }
+
+                        &:hover {
+                            .dropdown-content {
+                                display: block;
+                            }
+                        }
+                    }
+                }
+
+                .filters-sales-container {
+                    @include filters-container-base;
+
+                    .sales-checkbox-container {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        height: $sales-checkbox-container-height;
+                    }
+                }
+
+                label, 
+                .filters-title {
+                    color: $color-benefits-background;
+                    font-weight: $font-weight-bold;
+                    font-size: $font-17;
+                }
+            }
+
+            .popup-filters-button-container {
+                display: flex;
+                justify-content: center;
+                flex-wrap: wrap;
+                gap: map.get($popup-filters-button-container, gap);
+                width: map.get($popup-filters-button-container, width);
+
+                button {
+                    @include setup-button(
+                        map.get($popup-filters-button, height), 
+                        map.get($popup-filters-button, width)
+                    );
+
+                    font-size: $font-15;
+                }
+            }
+
+        }
+    }
+
+}
+
+
+
+

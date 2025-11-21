@@ -1,0 +1,155 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+@use '../base/fonts' as *;
+@use "sass:map";
+
+.login-overlay {
+    @include popup-background;
+}
+
+.login-window {
+    background-color: $color-background;
+    padding: map.get($login-window, padding-mobile);
+    border-radius: map.get($login-window, border-radius);
+
+    @media (min-width: $breakpoint-sm) {
+        padding: map.get($login-window, padding);
+    }
+
+    .login-close-container {
+        display: flex;
+        justify-content: flex-end;
+
+        .login-close {
+            height: $login-close-size;
+            width: $login-close-size;
+
+            @include transition-color('fill');
+
+            &:hover,
+            &:active {
+                cursor: pointer;
+                fill: $color-accent;
+            }
+        }
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        gap: map.get($login-form, gap);
+        
+        .login-input-field {
+            display: flex;
+            flex-direction: column;
+            gap: map.get($login-form, input-field-gap);
+
+            label {
+                font-size: $font-14;
+            }
+
+            .login-password-container {
+                position: relative;
+                display: flex;
+                align-items: center;
+
+                .password-eye-icon {
+                    position: absolute;
+                    right: map.get($login-password-eye, right);
+                    width: map.get($login-password-eye, size);
+                    height: map.get($login-password-eye, size);
+                    cursor: pointer;
+                    opacity: map.get($login-password-eye, opacity);
+
+                    @include transition-color('opacity');
+
+                    &:hover,
+                    &:active {
+                        opacity: map.get($login-password-eye, opacity-hover);
+                    }
+                }
+            }
+
+            .email-invalid-text,
+            .password-invalid-text {
+                display: none;
+                color: $color-accent;
+                font-size: $font-12;
+                font-weight: $font-weight-semibold;
+            }
+
+            #login-email,
+            #login-password {
+                font-size: $font-14;
+                
+                @include set-login-input-size(
+                    map.get($login-input, height-mobile), 
+                    map.get($login-input, width-mobile)
+                );
+
+                @media (min-width: $breakpoint-sm) {
+                    @include set-login-input-size(
+                        map.get($login-input, height), 
+                        map.get($login-input, width)
+                    );
+                }
+            }
+        }
+
+        .login-extra-field {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            .login-remember-container {
+                display: flex;
+                gap: $login-remember-container-gap;
+                align-items: center;
+
+                input[type="checkbox"] {
+                    width: $login-checkbox-size;
+                    height: $login-checkbox-size;
+                    accent-color: $color-accent;
+
+                    &:hover,
+                    &:active {
+                        cursor: pointer;
+                    }
+                }
+
+                .login-remember-text {
+                    cursor: pointer;
+                    color: $color-header-border;
+                }
+            }
+
+            .login-remember-text, 
+            .login-forgot {
+                font-size: $font-9;
+            } 
+
+            .login-forgot {
+                font-weight: $font-weight-bold;
+                color: $color-accent;
+
+                &:hover,
+                &:active {
+                    cursor: pointer;
+                    text-decoration: underline;
+                }
+            }
+        }
+
+        button {
+            @include setup-button(
+                map.get($login-button, height), 
+                map.get($login-button, width), 
+                $font-family-helvetica
+            );
+            
+            font-size: $font-12;
+        }
+    }
+
+}
+

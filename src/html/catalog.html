@@ -1,0 +1,118 @@
+<div class="content-catalog">
+    <div class="catalog-products-container">
+        <section class="catalog-products-header">
+            <p class="results">
+
+            </p>
+            <button type="button" class="show-filters-button">Show Filters</button>
+            <div class="sorting">
+                <select id="sorting-dropdown" title="Sorting">
+                    <option value="">Default Sorting</option>
+                    <option value="price-highest">Highest Price</option>
+                    <option value="price-lowest">Lowest Price</option>
+                    <option value="popularity-highest">Most Popular</option>
+                    <option value="rating-highest">Highest Rating</option>
+                </select>
+            </div>
+        </section>
+        <section class="catalog-products products-items">
+
+        </section>
+        <section class="catalog-products-footer">
+            <div class="previous-container">
+                <div class="button-previous">
+                    <img class="button-arrow-previous" src="../assets/images/svg/catalog-button-arrow.svg" alt="Arrow Previous">
+                    <button type="button">PREVIOUS</button>
+                </div>
+            </div>
+            <div class="page-numbers">
+
+            </div>
+            <div class="next-container">
+                <div class="button-next">
+                    <button type="button">NEXT</button>
+                    <img class="button-arrow-next" src="../assets/images/svg/catalog-button-arrow.svg" alt="Arrow Next">
+                </div>
+            </div>
+        </section>
+    </div>
+    <aside class="catalog-sidebar-container">
+        <section class="catalog-sidebar-header">
+            <form class="search-form">
+                <input 
+                    type="search" 
+                    id="search-input" 
+                    placeholder="Search Models"
+                >
+                <button class="search-button" type="submit">
+                    <img class="search-icon" src="../assets/images/svg/catalog-search-icon.svg" alt="Search Icon">
+                </button>
+            </form>
+        </section>
+        <section class="catalog-sidebar-content">
+            <h6 class="sidebar-title">Top Best Sets</h6>
+            <section class="sidebar-sets">
+
+            </section>
+        </section>
+    </aside>
+    <div class="popup-product-not-found">
+        <div class="popup-product-content">
+            <p>Product not found!</p>
+            <button type="button" class="popup-product-close">OK</button>
+        </div>
+    </div>
+    <div class="popup-filters">
+        <div class="popup-filters-content">
+            <div class="popup-filters-container">
+                <div class="filters-size-container filters-dropdown-container">
+                    <span class="filters-size-title filters-title">Size</span>
+                    <div class="dropdown">
+                        <div id="filters-size-select" class="dropdown-selected">
+                            <span class="selected-text">Choose option</span>
+                            <img src="../assets/images/svg/catalog-dropdown-arrow.svg" alt="Arrow Icon">
+                        </div>
+                        <div id="filters-size" class="dropdown-content">
+                            <div>Choose option</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="filters-color-container filters-dropdown-container">
+                    <span class="filters-color-title filters-title">Color</span>
+                    <div class="dropdown">
+                        <div id="filters-color-select" class="dropdown-selected">
+                            <span class="selected-text">Choose option</span>
+                            <img src="../assets/images/svg/catalog-dropdown-arrow.svg" alt="Arrow Icon">
+                        </div>
+                        <div id="filters-color" class="dropdown-content">
+                            <div>Choose option</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="filters-category-container filters-dropdown-container">
+                    <span class="filters-category-title filters-title">Category</span>
+                    <div class="dropdown">
+                        <div id="filters-category-select" class="dropdown-selected">
+                            <span class="selected-text">Choose option</span>
+                            <img src="../assets/images/svg/catalog-dropdown-arrow.svg" alt="Arrow Icon">
+                        </div>
+                        <div id="filters-category" class="dropdown-content">
+                            <div>Choose option</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="filters-sales-container">
+                    <label for="filter-sales">Sales</label>
+                    <div class="sales-checkbox-container">
+                        <input type="checkbox" id="filter-sales">
+                    </div>
+                </div>
+            </div>
+            <div class="popup-filters-button-container">
+                <button type="button" class="popup-filters-clear">CLEAR FILTERS</button>
+                <button type="button" class="popup-filters-hide">HIDE FILTERS</button>
+            </div>
+        </div>
+    </div>
+
+</div>
