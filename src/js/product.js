@@ -3,7 +3,7 @@ import {
     fetchData, 
     cart,
     imgLocationPNG, imgLocationSVG,
-    maxEmailLength, maxUserInputLength, maxMessageLength,
+    setInputLength, maxEmailLength, maxUserInputLength, maxMessageLength,
     validateEmailInput, validateTextInput, isInput, resetInputs,
     emailRegex,
     goToProductPage, addToCart,
@@ -266,6 +266,11 @@ export async function render(htmlPromise) {
         successMessage.style.display = 'block';
         setTimeout(() => (successMessage.style.display = 'none'), 5000);
     });
+
+    setInputLength(nameInput, maxUserInputLength);
+    setInputLength(emailInput, maxEmailLength);
+    setInputLength(reviewInput, maxMessageLength);
+
 
     const addToCartButtons = main.querySelectorAll('.add-to-cart');
     const productImages = main.querySelectorAll('.product-image-container');
