@@ -1982,6 +1982,7 @@ button:hover {
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  -webkit-user-select: none;
   user-select: none;
 }
 .content-cart .cart-products .products-header {
